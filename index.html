@@ -326,18 +326,31 @@
     </main>
     
 
-
+    <a href="#top" id="toTop" style="display: none;"><img src="img/flecha-hacia-arriba.png" alt=""></a>
     <script>
+        var mybutton = document.getElementById("toTop")
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+    
+        mybutton.onclick = function() {topFunction()};
+    
+        function topFunction() {
+            document.body.scrollTop = 0; // Safari
+            document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera
+        }
+   
         function myFunc()  {
             var now = new Date();
             var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
             document.getElementById('display-time').innerHTML = time;
         }
         setInterval(myFunc, 1000);
-    </script>
-
-
-
     </script>
 </body>
 </html>

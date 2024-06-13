@@ -8,6 +8,24 @@
     scroll-behavior: smooth;
   }
   
+  #toTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--gris_bordes);
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+   }
+   #toTop img {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+   }
 
 /*
 aside {
@@ -322,9 +340,6 @@ article .img-nombre {
     margin: 40px -10px;
 }
 
-article .img-nombre {
-}
-
 .modal {
     position: fixed;
     top: 0;
@@ -362,19 +377,6 @@ article .img-nombre {
     color: #fff;
     text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
     .contenedor {
         width: 100%;
         flex-direction: column;
@@ -384,7 +386,6 @@ article .img-nombre {
         margin: 0px; 
         flex: 0 0 100%;
     }
-
 
     .habilidades {
         margin-bottom: 40px;
