@@ -407,7 +407,6 @@ h4 {
         margin: auto;
         margin: 0px;  
         padding: 0px;
-        margin: auto;
     }
 
 
@@ -419,7 +418,7 @@ article .img-nombre {
 .img-nombre img {
     width: 40%;
     border-radius: 50%; /* Cambia esto */
-    margin: 40px -10px;
+    margin: 60px -10px;
 }
 
 .modal {
@@ -472,6 +471,29 @@ article .img-nombre {
     .habilidades {
         margin-bottom: 40px;
     }
+
+
+
+
+
+
+
+
+    
+    .switch {
+        background: #343d5b;
+        border-radius: 1000px;
+        border: none;
+        top: 0;
+        right: 0;
+        left: 30;
+        margin: 20px 10px;
+        cursor: pointer;
+        display: flex;
+        outline: none;
+      }
+    
+
     
 }
 
