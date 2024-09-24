@@ -307,11 +307,10 @@ h4 {
     gap: 10px;
 }
 .caja {
-    background: #060606;
     border: 1px solid #F2F2F2;
     border-radius: 25px;
     padding: 40px 30px;
-    flex: 0 0 calc(25%);
+    flex: 0 0 calc(32%);
     height: 200px;
 }
 .caja a {
