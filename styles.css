@@ -300,7 +300,7 @@ h4 {
 
 
 .contenedor {
-    width: 140%;
+    width: 160%;
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
@@ -311,7 +311,7 @@ h4 {
     border-radius: 25px;
     padding: 40px 30px;
     flex: 0 0 calc(32%);
-    height: 200px;
+    height: 220px;
 }
 .caja a {
     font-family: OpenSans-Regular;
