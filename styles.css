@@ -300,7 +300,7 @@ h4 {
 
 
 .contenedor {
-    width: 120%;
+    width: 150%;
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
@@ -309,7 +309,7 @@ h4 {
 .caja {
     border: 1px solid #F2F2F2;
     border-radius: 25px;
-    padding: 40px 30px;
+    padding: 40px 30px 40px 30px;
     flex: 0 0 calc(22%);
     height: 220px;
 }
