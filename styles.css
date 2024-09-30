@@ -347,7 +347,16 @@ h4 {
 
 .caja .rojo {
     color: #c3251d;
+}
 
+.caja .github {
+    position: relative;
+    left: 10px;
+}
+
+.caja .figma {
+    position: relative;
+    left: 15px;
 }
 .caja span {
     color: #1DC347;
