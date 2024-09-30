@@ -35,17 +35,15 @@
    button {
     transition: 2s ease all;
     position: absolute;
-    float: right;
-    margin-bottom: 20px;
 }
 
 .switch {
     background: #343d5b;
-    border-radius: 1000px;
+    border-radius: 100px;
     border: none;
     top: 0;
-    right: 0;
-    margin: 30px 570px;
+    left: 0;
+    position: relative;
     cursor: pointer;
     display: flex;
     outline: none;
@@ -474,12 +472,6 @@ article .img-nombre {
     }
 
 
-
-
-
-
-
-
     button {
         transition: 2s ease all;
         position: absolute;
@@ -532,8 +524,6 @@ article .img-nombre {
     background-color: none;
     color: white;
 }
-
-    
 }
 
 
