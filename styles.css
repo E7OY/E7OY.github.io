@@ -28,7 +28,7 @@
    }
 
    body.dark #toTop img {
-    content: url(img/flechaNegra.png);
+    content: url(img/flechaNegra.webp);
    }
 
 
@@ -102,10 +102,10 @@ body.dark .caja a {
     color: white;
 }
 body.dark .github  {
-    content: url(img/githubWhite.png);
+    content: url(img/githubWhite.webp);
 }
 body.dark .figma  {
-    content: url(img/figmaWhite.png);
+    content: url(img/figmaWhite.webp);
 }
 
 /*
@@ -290,7 +290,7 @@ h4 {
     color: #3283D5;
 }
 .general h4 img:hover {
-    content: url(img/exteriorBlue.png);
+    content: url(img/exteriorBlue.webp);
     text-decoration: underline;
 }
 
