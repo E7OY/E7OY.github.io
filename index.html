@@ -64,6 +64,9 @@
                         const tempDiv = document.getElementById('temp');
                         const temperatura = Math.round(data.main.temp);
 
+                        const humedad = data.main.humidity;             // Humedad
+                        const descripcion = data.weather[0].description; 
+
                         const iconCode = data.weather[0].icon;
 
                         // Construir la URL del ícono
@@ -71,7 +74,8 @@
 
         
                         // Mostrar solo la temperatura
-                        tempDiv.innerHTML = `${temperatura}°C <img src="${iconUrl}" width="50px" style="position: absolute; left: 610px; top: 380px" alt="Icono del clima" /> `;
+                        tempDiv.innerHTML = `${temperatura}°C, <img src="${iconUrl}" width="50px" style="position: absolute; left: 650px; top: 345px" alt="Icono del clima" /> 
+                        ${descripcion}`;    
                     })
                     .catch(error => console.log('Error:', error));
             </script>

@@ -182,8 +182,10 @@ article .img-nombre {
     margin: 50px 80px;
     border-radius: 10%;
     position: absolute;
+    box-shadow: 0px 0px 10px #4f4f4f;
     
 }
+
 .modal {
     position: fixed;
     top: 0;
