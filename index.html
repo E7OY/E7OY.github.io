@@ -30,7 +30,7 @@
 
     <main>
         <button class="switch" id="switch">
-            <span><img src="img/sun-solid.svg" width="15" height="15" alt="sol boton dark mode"></span>
+            <span><img src="img/sun-solid.svg" width="15" height="150" alt="sol boton dark mode"></span>
             <span><img src="img/moon-solid.svg" width="15" height="15" alt="luna boton dark mode"></span>
         </button>
         <article class="nombre">
@@ -41,8 +41,35 @@
                 superior especializado en desarrollo 
                 de aplicaciones web
             </h2>
-            <h3>A Coruña, España <span id="display-time"></span></h3>
-            <div id="weather"></div>
+            <h3>A Coruña, España 
+                
+                
+            <span id="temp"></span>
+
+            <script>
+                // Reemplaza TU_API_KEY con tu API Key de OpenWeather
+                const apiKey = 'fbc85170dc7995a303c1d3f3a45cd83a';
+        
+                // Ciudad en la que naciste (cámbiala a la que desees)
+                const ciudad = 'Corunha';  // Por ejemplo, Madrid
+        
+                // URL de la API de OpenWeather
+                const url = `https://api.openweathermap.org/data/2.5/weather?q=Corunha&appid=fbc85170dc7995a303c1d3f3a45cd83a&units=metric&lang=es`;
+        
+                // Hacer la solicitud a la API
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        const tempDiv = document.getElementById('temp');
+                        const temperatura = Math.round(data.main.temp);
+        
+                        // Mostrar solo la temperatura
+                        tempDiv.innerHTML = `<br>${temperatura}°C a las `;
+                    })
+                    .catch(error => console.log('Error:', error));
+            </script>
+                <span id="display-time"></span></h3>
+             
             </div>
             
 
