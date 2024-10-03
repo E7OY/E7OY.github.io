@@ -74,8 +74,8 @@
 
         
                         // Mostrar solo la temperatura
-                        tempDiv.innerHTML = `${temperatura}°C, <img src="${iconUrl}" width="50px" style="position: absolute; left: 650px; top: 345px" alt="Icono del clima" /> 
-                        ${descripcion}`;    
+                        tempDiv.innerHTML = `${descripcion}<span>, </span>${temperatura}°C <img src="${iconUrl}" width="50px" style="position: absolute; left: 650px; top: 345px" alt="Icono del clima" /> 
+                        `;    
                     })
                     .catch(error => console.log('Error:', error));
             </script>
