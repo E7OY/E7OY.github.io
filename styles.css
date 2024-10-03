@@ -27,6 +27,11 @@
     margin-top: 10px;
    }
 
+   #display-time, #temp{
+    line-height: 40px;
+   }
+
+
    body.dark #toTop img {
     content: url(img/flechaNegra.webp);
    }

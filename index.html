@@ -44,7 +44,8 @@
             <h3>A Coruña, España 
                 
                 
-            <span id="temp"></span>
+                <br>  <span id="display-time"></span>
+            <span id="temp"></span></h3>
 
             <script>
                 // Reemplaza TU_API_KEY con tu API Key de OpenWeather
@@ -62,13 +63,18 @@
                     .then(data => {
                         const tempDiv = document.getElementById('temp');
                         const temperatura = Math.round(data.main.temp);
+
+                        const iconCode = data.weather[0].icon;
+
+                        // Construir la URL del ícono
+                        const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
         
                         // Mostrar solo la temperatura
-                        tempDiv.innerHTML = `<br>${temperatura}°C a las `;
+                        tempDiv.innerHTML = `${temperatura}°C <img src="${iconUrl}" width="50px" style="position: absolute; left: 610px; top: 380px" alt="Icono del clima" /> `;
                     })
                     .catch(error => console.log('Error:', error));
             </script>
-                <span id="display-time"></span></h3>
              
             </div>
             
