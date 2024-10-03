@@ -60,8 +60,7 @@
     height: 30px;
     position: absolute;
     background: #f1f1f1;
-    top: 0;
-    left: 0;
+     left: 0;
     right: unset;
     border-radius: 100px;
     transition: 0.3s ease all;
