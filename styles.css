@@ -31,6 +31,17 @@
     line-height: 40px;
    }
 
+   .img-icono {
+    float: left;
+    position: relative;
+    bottom: 5px;
+    right: 10px;
+   }
+
+   .img-icono img {
+    margin: 0;
+    padding: 0;
+   }
 
    body.dark #toTop img {
     content: url(img/flechaNegra.webp);

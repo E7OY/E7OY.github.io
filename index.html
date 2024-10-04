@@ -43,42 +43,42 @@
             </h2>
             <h3>A Coruña, España 
                 
-                
-                <br>  <span id="display-time"></span>
-            <span id="temp"></span></h3>
-
+                <span id="display-time"></span>
             <script>
-                // Reemplaza TU_API_KEY con tu API Key de OpenWeather
+                //API_KEY de OpenWeather
                 const apiKey = 'fbc85170dc7995a303c1d3f3a45cd83a';
         
-                // Ciudad en la que naciste (cámbiala a la que desees)
-                const ciudad = 'Corunha';  // Por ejemplo, Madrid
+                //Ciudad 
+                const ciudad = 'Corunha';
         
-                // URL de la API de OpenWeather
+                //URL de la API de OpenWeather
                 const url = `https://api.openweathermap.org/data/2.5/weather?q=Corunha&appid=fbc85170dc7995a303c1d3f3a45cd83a&units=metric&lang=es`;
         
-                // Hacer la solicitud a la API
+                //Solicitud a la API
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {
                         const tempDiv = document.getElementById('temp');
                         const temperatura = Math.round(data.main.temp);
 
-                        const humedad = data.main.humidity;             // Humedad
-                        const descripcion = data.weather[0].description; 
+                        const humedad = data.main.humidity;             //Humedad
+                        const descripcion = data.weather[0].description;   //Descripción del clima
 
-                        const iconCode = data.weather[0].icon;
+                        const iconCode = data.weather[0].icon;        //Código del ícono
 
-                        // Construir la URL del ícono
+                        //URL del ícono
                         const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
         
-                        // Mostrar solo la temperatura
-                        tempDiv.innerHTML = `${descripcion}<span>, </span>${temperatura}°C <img src="${iconUrl}" width="50px" style="position: absolute; left: 650px; top: 345px" alt="Icono del clima" /> 
+                        //Mostrar info en la página
+                        tempDiv.innerHTML = `${descripcion}<span>, </span>${temperatura}°C <img class="img-icono" src="${iconUrl}" width="50px" /*style="position: absolute; left: 650px; top: 345px"*/ alt="Icono del clima" /> 
                         `;    
                     })
                     .catch(error => console.log('Error:', error));
             </script>
+                
+                <br>  
+            <span id="temp"></span></h3>
              
             </div>
             
