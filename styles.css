@@ -434,6 +434,10 @@ h4 {
         padding: 0px;
     }
 
+    .img-icono {
+        display: none;
+       }
+    
 
 article .img-nombre {
     float: right;
@@ -442,8 +446,10 @@ article .img-nombre {
 
 .img-nombre img {
     width: 40%;
-    border-radius: 50%;  
+    height: auto;
+    border-radius: 90% 70% 80% 60%;  
     margin: 60px -10px;
+    box-shadow: none;
     height: 20%;
 }
 
