@@ -7,6 +7,69 @@
   *{
     scroll-behavior: smooth;
   }
+
+
+ 
+
+  #github-activity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.username {
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 2px;
+    background-color: #ebedf0;
+}
+
+.day.level-1 {
+    background-color: #c6e48b;
+}
+
+.day.level-2 {
+    background-color: #7bc96f;
+}
+
+.day.level-3 {
+    background-color: #239a3b;
+}
+
+.day.level-4 {
+    background-color: #196127;
+}
+
+
   
   #toTop {
     position: fixed;
