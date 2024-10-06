@@ -325,17 +325,14 @@
                     <div id="github-activity"></div>
                     <script>
                         async function fetchUserInfo() {
-                            const username = 'E7OY'; // Reemplaza con tu nombre de usuario de GitHub
-                    
+                            const username = 'E7OY'; 
                             try {
-                                // Obtener la información del usuario
                                 const response = await fetch(`https://api.github.com/users/${username}`);
                                 if (!response.ok) {
                                     throw new Error(`Error fetching user info: ${response.statusText}`);
                                 }
                                 const user = await response.json();
                     
-                                // Crear el contenedor del usuario
                                 const userContainer = document.createElement('div');
                                 userContainer.className = 'user-info';
                     
@@ -345,7 +342,7 @@
                                 avatar.className = 'avatar';
                     
                                 const name = document.createElement('h2');
-                                name.className = 'username'; // Añadir una clase específica al nombre de usuario
+                                name.className = 'username';
                                 name.textContent = user.login;
                     
                                 userContainer.appendChild(avatar);
@@ -359,7 +356,7 @@
                         }
                     
                         async function fetchCommitActivity() {
-                            const username = 'E7OY'; // Reemplaza con tu nombre de usuario de GitHub
+                            const username = 'E7OY';
                             const commitsContainer = document.getElementById('github-activity');
                             const commitCounts = {};
                             const currentDate = new Date();
@@ -381,8 +378,7 @@
                                     if (event.type === 'PushEvent') {
                                         const eventDate = new Date(event.created_at);
                                         const dateStr = eventDate.toISOString().split('T')[0];
-                    
-                                        // Solo contar los commits del último mes
+                
                                         if (eventDate >= lastMonthDate && eventDate <= currentDate) {
                                             if (!commitCounts[dateStr]) {
                                                 commitCounts[dateStr] = 0;
@@ -395,14 +391,13 @@
                                 page++;
                             }
                     
-                            // Crear el calendario de commits
                             const calendar = document.createElement('div');
                             calendar.className = 'calendar';
                     
                             for (let d = new Date(lastMonthDate); d <= currentDate; d.setDate(d.getDate() + 1)) {
                                 const dateStr = d.toISOString().split('T')[0];
                                 const count = commitCounts[dateStr] || 0;
-                                const level = Math.min(4, count); // Nivel de intensidad del color
+                                const level = Math.min(4, count); 
                     
                                 const day = document.createElement('div');
                                 day.className = `day level-${level}`;
