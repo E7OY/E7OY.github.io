@@ -14,7 +14,6 @@
   #github-activity {
     display: flex;
     flex-direction: column;
-    align-items: center;
     position: relative;
     top: -30px;
 }
@@ -624,10 +623,6 @@ article .img-nombre {
 
 
 #github-activity {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
     top: -15px;
 }
 
