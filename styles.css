@@ -628,6 +628,7 @@ article .img-nombre {
     flex-direction: column;
     align-items: center;
     position: relative;
+    top: -15px;
 }
 
 }
