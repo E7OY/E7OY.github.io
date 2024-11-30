@@ -389,9 +389,9 @@ h4 {
     border: 1px solid var(--gris_bordes);
     border-radius: 25px;
     padding: 40px 30px;
-    flex: 0 0 calc(22%);
+    flex: 0 calc(22%);
     height: 220px;
-     overflow: hidden;
+    overflow: hidden;
 }
 .caja a {
     font-family: OpenSans-Regular;
@@ -443,12 +443,15 @@ h4 {
 .caja span {
     color: #1DC347;
     font-size: 40px;
-    animation: blink 3s infinite;
+    animation: span 3s infinite;
     position: relative;
     bottom: 4px;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
 }
 
-@keyframes blink {
+@keyframes span {
     0% {opacity: 1;}
     50% {opacity: 0;}
     100% {opacity: 1;}
