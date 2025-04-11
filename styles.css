@@ -259,6 +259,26 @@ article .img-nombre {
      
 }
 
+
+.linkedin-link {
+    color: #0A66C2 !important;
+}
+
+.github-link {
+    color: #f0f6fc !important;
+}
+
+
+.linkedin-link:hover::after, .github-link:hover::after {
+    width: 100%;
+    transition: 2s ease all;
+    text-decoration: underline;
+}
+
+p {
+    max-width: 80ch;
+}
+
 .modal {
     position: fixed;
     top: 0;
@@ -295,15 +315,13 @@ article .img-nombre {
 
 
 .redes a {
-    border: 2px solid #e9e9e9;
     border-radius: 5px;
-    padding: 13px 10px 5px 10px;
 }
 .redes {
     clear: both;
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 25px;
     margin-bottom: 40px;
 }
 .redes div {
@@ -482,7 +500,7 @@ h4 {
     justify-content: center;
     background: #eeeeee;
     border-radius: 30px;
-    padding: 8px 15px;
+    padding: 10px 15px;
 }
 .lenguaje img {
     float: left;
@@ -656,3 +674,19 @@ article .img-nombre {
 }
 
 
+
+
+
+.lenguaje i {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.fa-html5 { color: #E34F26; }
+.fa-css3-alt { color: #1572B6; }
+.fa-js { color: #F7DF1E; }
+.fa-react { color: #61DAFB; }
+.fa-sass { color: #CC6699; }
+.fa-php { color: #777BB4; }
+.fa-wordpress { color: #21759B; }
+.fa-java { color: #007396; }
