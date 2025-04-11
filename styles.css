@@ -690,3 +690,69 @@ article .img-nombre {
 .fa-php { color: #777BB4; }
 .fa-wordpress { color: #21759B; }
 .fa-java { color: #007396; }
+
+
+
+
+
+
+.fila-certificados {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.certificado {
+    flex: 1;
+    padding: 0px 0px;
+    background: transparent;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.certificado h3 {
+    margin-bottom: 15px;
+    width: 100%;
+    float: none;
+}
+
+.certificado .fecha {
+    float: none;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.certificado p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 15px 0;
+    width: 100%;
+    clear: both;
+}
+
+.certificado h4 {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.certificado.vacio {
+    visibility: hidden;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .fila-certificados {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .certificado {
+        width: 100%;
+    }
+
+    .certificado.vacio {
+        display: none;
+    }
+}
