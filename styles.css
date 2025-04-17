@@ -264,6 +264,10 @@ article .img-nombre {
     color: #0A66C2 !important;
 }
 
+.correo-link {
+    color: #D93F3F !important;
+}
+
 .github-link {
     color: #f0f6fc !important;
 }
@@ -741,7 +745,6 @@ article .img-nombre {
     border: none;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .fila-certificados {
         flex-direction: column;
@@ -756,3 +759,97 @@ article .img-nombre {
         display: none;
     }
 }
+
+
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.badge-glass {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.badge-glass i {
+    font-size: 15px;
+}
+
+.badge-glass:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.badge-glass .fa-microsoft { color: #5E5E5E; }
+.badge-glass .fa-database { color: #4479A1; }
+.badge-glass .fa-tailwind-css { color: #06B6D4; }
+.badge-glass .fa-git-alt { color: #F05032; }
+
+body.dark .badge-glass span {
+    color: #fff;
+}
+body:not(.dark) .badge-glass span {
+    color: #333;
+}
+body:not(.dark) .badge-glass {
+    color: #333;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+body:not(.dark) .badge-glass:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.badge-glass span {
+    font-size: 14px;
+    font-weight: 200;
+    color: #fff;
+    font-family: monospace;
+    
+}
+
+
+.dot-pulse {
+    position: relative;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: #39D353;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
