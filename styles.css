@@ -407,8 +407,7 @@ h4 {
     justify-content: left;
     flex-wrap: wrap;
     gap: 10px;
-    height: 400px;
-    overflow: scroll;
+    height: auto;
     padding-bottom: 20px;
 }
 .caja {
@@ -416,9 +415,7 @@ h4 {
     flex-direction: column;
     border: 1px solid var(--gris_bordes);
     border-radius: 25px;
-    padding: 40px 40px;
-    flex: 0 calc(22%);
-    height: 220px;
+    height: auto;
     overflow: hidden;
 }
 .caja a {
@@ -453,6 +450,7 @@ h4 {
     border-radius: 30px;
     font-weight: 500;
     display: inline-block;
+    padding: 10px 0px;
 }
 
 .caja .rojo {
@@ -928,4 +926,87 @@ body:not(.dark) .badge-glass:hover {
 .tech-badges .badge-glass {
     background: rgba(255, 255, 255, 0.1) !important;
     backdrop-filter: blur(10px) !important;
+}
+
+
+
+
+.caja {
+    flex: 0 calc(50% - 10px);
+    height: auto;
+    padding: 0;
+    justify-content: center;
+    
+}
+
+.caja h3, .caja p, .caja .lenguajes {
+    padding: 0 20px;
+    max-width: 35ch;
+}
+
+.project-video video {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+
+
+
+.project-video {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    order: -1; /* Esto asegura que esté siempre primero */
+}
+
+.video-control {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+
+
+.project-video:hover .video-control {
+    opacity: 1;
+}
+
+.video-control:after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 24px;
+    border-right: 8px solid rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
+    margin-left: 0;
+}
+
+.video-control.paused:after {
+    width: 0;
+    height: 0;
+    border: none;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 18px solid rgba(255, 255, 255, 0.9);
+    background: transparent;
+    margin-left: 4px;
+    border-radius: 0;
 }
