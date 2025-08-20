@@ -1,6 +1,6 @@
 # Portafolio Personal
 
-¡Bienvenido a mi portafolio personal! 🌟 Este sitio web es una representación de mi trayectoria profesional, habilidades y proyectos destacados. Está desplegado en: [e7oy.github.io](https://e7oy.github.io).
+¡Bienvenido a mi portafolio personal! Este sitio web es una representación de mi trayectoria profesional, habilidades y proyectos destacados. Está desplegado en: [e7oy.github.io](https://e7oy.github.io).
 
 ## 🚀 **Características**
 Mi portafolio cuenta con las siguientes secciones:
@@ -14,19 +14,19 @@ Mi portafolio cuenta con las siguientes secciones:
 
 ---
 
-## 🌐 **Enlace al sitio**
+## **Enlace al sitio**
 Puedes visitar mi portafolio desplegado aquí: [e7oy.github.io](https://e7oy.github.io)
 
 ---
 
-## 🛠️ **Tecnologías utilizadas**
+##  **Tecnologías utilizadas**
 El portafolio está desarrollado con las siguientes tecnologías y herramientas:
 - **HTML5** y **CSS3**: Para la estructura y estilos del sitio.
 - **JavaScript**: Para la interactividad.
 
 ---
 
-## 📁 **Estructura del proyecto**
+## **Estructura del proyecto**
 La estructura del proyecto es la siguiente:
 
 ```plaintext
@@ -40,7 +40,7 @@ La estructura del proyecto es la siguiente:
 └── README.md           # Este archivo
 ````
 
-## 📋 **Cómo contribuir**
+## **Cómo contribuir**
 
 Si tienes sugerencias, mejoras o ideas para este proyecto, no dudes en contribuir:
 
@@ -49,7 +49,7 @@ Si tienes sugerencias, mejoras o ideas para este proyecto, no dudes en contribui
     Realiza tus cambios y haz un commit: git commit -m "Descripción de los cambios".
     Envía un pull request con tus modificaciones.
 
-## 📞 **Contacto**
+## **Contacto**
 
 Si deseas comunicarte conmigo, puedes hacerlo a través de:
 
