@@ -1607,7 +1607,75 @@ body.dark .screenshot-description {
     font-family: inherit !important;
 }
 
-.kaggle-badge{ 
-    margin: 10px 0px 30px 0px; 
-    width:max-content; 
+.kaggle-badge,
+.python-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    vertical-align: middle;
+    width: auto;
+    position: relative;
+    transition: margin 0.18s ease, transform 0.18s ease;
+}
+
+.badges-row > div:hover,
+.badges-row > div:focus-within {
+    margin-right: 88px;
+    z-index: 30;
+}
+
+.badges-row {
+    clear: both;
+    display: flex;
+    gap: 0;
+    align-items: center;
+    margin: 10px 0 30px 0;
+}
+
+.badge-label {
+    position: absolute;
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-60%);
+    display: block;
+    font-family: Inconsolata-Regular, sans-serif;
+    font-size: 13px;
+    color: var(--principal);
+    opacity: 0;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+.kaggle-badge:hover .badge-label,
+.python-badge:hover .badge-label,
+.kaggle-badge:focus .badge-label,
+.python-badge:focus .badge-label {
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    .badges-row {
+        display: block;
+    }
+
+    .badges-row .kaggle-badge,
+    .badges-row .python-badge {
+        margin: 10px 0 20px 0;
+    }
+
+    .badge-label {
+        position: static;
+        left: auto;
+        top: auto;
+        transform: none;
+        opacity: 1;
+        margin-left: 8px;
+        display: inline-block;
+        white-space: normal;
+        z-index: auto;
+    }
 }
