@@ -10,6 +10,21 @@
     <link rel="icon" type="image/png" href="img/102689282.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            if (window.__applyDarkPref) return;
+            window.__applyDarkPref = true;
+            function applyPref() {
+                try {
+                    var stored = localStorage.getItem('prefers-dark');
+                    var prefersSystem = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    var shouldDark = stored === '1' ? true : (stored === '0' ? false : prefersSystem);
+                    document.body.classList.toggle('dark', !!shouldDark);
+                } catch (e) {}
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyPref); else applyPref();
+        })();
+    </script>
 </head>
 
 <body>
