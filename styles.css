@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 :root {
@@ -10,7 +9,9 @@
 
 * {
     scroll-behavior: smooth;
-    font-family: 'Inter', sans-serif;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: 'Poppins', sans-serif;
 }
 
 #github-activity {
@@ -29,8 +30,8 @@
 
 .username {
     font-size: 10px;
-    font-weight: bold;
-    color: var(--principal);
+    font-weight: bolder;
+    color: black;
 }
 
 body.dark .username {
@@ -83,7 +84,6 @@ body.dark .username {
     height: 50px;
     text-align: center;
     line-height: 50px;
-    border-radius: 50%;
     cursor: pointer;
 }
 
@@ -165,8 +165,24 @@ button {
     color: white;
 }
 
+.body-grid {
+    background-color: #fff;
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+        linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+}
+
 body.dark {
     background-color: #18181B;
+}
+
+body.dark.body-grid {
+    background-color: #18181B;
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
 }
 
 body.dark h1 {
@@ -212,7 +228,9 @@ main {
 
 .nombre h1,
 .nombre h2 {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
 }
 
 .nombre {
@@ -222,17 +240,19 @@ main {
 
 .nombre h2 {
     font-size: 32px;
-    color: #272727;
-    font-weight: 500;
+    color: #000;
+    font-weight: bold;
     margin: 0px;
     padding: 0px;
 }
 
 .nombre h3 {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
     font-size: 16px;
     color: var(--secundario);
-    font-weight: 800;
+    font-weight: 600;
     margin: 0px;
     padding: 0px;
     width: 60%;
@@ -240,7 +260,9 @@ main {
 }
 
 .nombre h4 {
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
     font-size: 16px;
     color: var(--secundario);
     font-weight: 200;
@@ -249,10 +271,6 @@ main {
     display: flex;
     align-items: center;
     gap: 5px;
-}
-
-.nombre h4 img {
-    filter: brightness(0.6);
 }
 
 article .texto-nombre {
@@ -267,6 +285,28 @@ article .texto-nombre {
 article .img-nombre {
     float: right;
     width: 20%;
+    border-radius: 0;
+    box-shadow: 6px 6px 0px var(--principal);
+    border: 1px solid var(--principal);
+    transition: box-shadow 0.8s ease;
+    background-color: #fff;
+}
+
+article .img-nombre:hover {
+    box-shadow: -6px -6px 0px var(--principal);
+    transition: box-shadow 0.3s ease;
+}
+
+body.dark article .img-nombre {
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 6px 6px 0px rgb(255, 255, 255);
+    transition: box-shadow 0.8s ease;
+    background-color: #18181B;
+}
+
+body.dark article .img-nombre:hover {
+    box-shadow: -6px -6px 0px rgb(255, 255, 255);
+    transition: box-shadow 0.3s ease;
 }
 
 .img-nombre {
@@ -275,7 +315,8 @@ article .img-nombre {
     position: relative;
     z-index: 1;
     border: 1px solid #eee;
-    background: linear-gradient(35deg, #6495ED 0%, #4169E1 40%, #8A2BE2 100%);
+    /* background: linear-gradient(35deg, #6495ED 0%, #4169E1 40%, #8A2BE2 100%); */
+    padding: 10px 0px 0px 0px;
 }
 
 p {
@@ -327,17 +368,35 @@ p {
 
 .redes img {
     padding: 8px;
-    border-radius: 5px;
-    filter: brightness(0.7);
-    border: 1px solid #dadada4b;
+    filter: brightness(0);
+    border: 1px solid var(--principal);
+    box-shadow: 3px 3px 0px var(--principal);
+    transition: box-shadow 0.3s ease;
+
 }
 
+body.dark .redes img {
+    filter: brightness(2);
+    border: 1px solid var(--gris_bordes);
+    box-shadow: 3px 3px 0px var(--gris_bordes);
+    transition: box-shadow 0.3s ease;
 
+}
 
+.redes img:hover {
+    box-shadow: 0px 0px 0px var(--principal);
+    transition: box-shadow 0.3s ease;
+}
 
+body.dark .redes img:hover {
+    box-shadow: 0px 0px 0px var(--gris_bordes);
+    transition: box-shadow 0.3s ease;
+}
 
 .general h2 {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
     font-size: 22px;
     color: var(--principal);
     font-weight: 900;
@@ -350,7 +409,9 @@ p {
 }
 
 .general p {
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
     font-size: 16px;
     color: var(--secundario);
     font-weight: 200;
@@ -359,7 +420,9 @@ p {
 }
 
 .general h3 {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
     font-size: 16px;
     width: 70%;
     float: left;
@@ -368,7 +431,9 @@ p {
 }
 
 .general .fecha {
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
     font-size: 20px;
     color: var(--secundario);
     font-weight: 200;
@@ -382,12 +447,18 @@ h4 {
 }
 
 .general a {
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
     border-radius: 25px;
     display: inline-block;
     color: black;
     text-decoration: none;
     font-weight: 300;
+}
+
+body.dark .general a {
+    color: #ededed;
 }
 
 .general a:hover {
@@ -413,14 +484,14 @@ h4 {
 
 .proyecto-card {
     background: #ffffff;
-    border: 1px solid #eeeeee;
-    border-radius: 12px;
+    border: 1px solid #000;
     padding: 18px;
     transition: all 0.3s ease;
+    box-shadow: 4px 4px 0px rgb(26, 26, 26);
 }
 
 .proyecto-card:hover {
-    transform: scale(1.04);
+    box-shadow: 6px 6px 0px rgb(0, 0, 0);
 }
 
 .project-header {
@@ -430,7 +501,9 @@ h4 {
 }
 
 .project-header h3 {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #1A1A1A;
@@ -458,7 +531,9 @@ h4 {
 }
 
 .caja h4 {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
     font-size: 14px;
     text-align: center;
     color: #444444;
@@ -516,7 +591,9 @@ h4 {
 }
 
 .project-description {
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular;
     font-size: 14px !important;
     color: var(--secundario);
     line-height: 1.5;
@@ -530,24 +607,26 @@ h4 {
 }
 
 .tech-tag {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: OpenSans-Regular;
     font-size: 11px;
     font-weight: 500;
-    padding: 4px 8px;
-    background-color: #EEEEEE;
-    color: #475569;
-    border-radius: 8px;
+    padding: 5px 10px;
+    background-color: #000000;
+    color: #ffffff;
     text-transform: lowercase;
     letter-spacing: 0.3px;
 }
 
 body.dark .proyecto-card {
-    background: #262626;
-    border-color: #404040;
+    background: #18181B;
+    border-color: var(--gris_bordes);
+    box-shadow: 4px 4px 0px var(--gris_bordes);
 }
 
 body.dark .proyecto-card:hover {
-    border-color: #61DAFB;
+    border-color: #888888;
 }
 
 body.dark .project-header h3 {
@@ -559,8 +638,8 @@ body.dark .project-description {
 }
 
 body.dark .tech-tag {
-    background-color: #374151;
-    color: #d1d5db;
+    background-color: var(--gris_bordes);
+    color: var(--principal);
 }
 
 body.dark .link-icon:hover {
@@ -709,7 +788,7 @@ body.dark .link-icon:hover {
     }
 
     .switch.active {
-        background: orange;
+        background: rgb(131, 90, 15);
         color: black;
     }
 
@@ -736,13 +815,17 @@ body.dark .link-icon:hover {
 
 
 @font-face {
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular;
     src: url(fonts/Inconsolata-Regular.ttf);
     font-display: swap;
 }
 
 @font-face {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: OpenSans-Regular;
     src: url(fonts/OpenSans-Regular.ttf);
     font-display: swap;
 }
@@ -781,7 +864,9 @@ body.dark .link-icon:hover {
     font-size: 16px;
     width: 100%;
     clear: both;
-    font-family: monospace !important;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: monospace !important;
 }
 
 
@@ -800,7 +885,9 @@ body.dark .link-icon:hover {
     border: none;
     color: #3283D5;
     cursor: pointer;
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular;
     font-size: 14px;
     text-decoration: underline;
     margin-left: 5px;
@@ -855,7 +942,6 @@ body.dark .toggle-btn:hover {
     align-items: center;
     gap: 8px;
     padding: 6px 14px;
-    border-radius: 50px;
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
@@ -915,7 +1001,9 @@ body:not(.dark) .badge-glass:hover {
     font-size: 14px;
     font-weight: 200;
     color: #fff;
-    font-family: monospace;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: monospace;
 
 }
 
@@ -953,7 +1041,6 @@ body:not(.dark) .badge-glass:hover {
     align-items: center;
     gap: 10px;
     padding: 6px 14px;
-    border-radius: 50px;
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
@@ -1120,15 +1207,29 @@ body:not(.dark) .badge-glass:hover {
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 4px 12px;
-    background: #EEEEEE;
-    border-radius: 8px;
-    font-family: Inconsolata-Regular;
+    padding: 5px 12px;
+    border: 1px solid #000;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular;
+    box-shadow: 4px 4px 0px rgb(0, 0, 0);
     font-size: 14px;
     font-weight: 500;
     color: #000;
     transition: all 0.2s ease;
     cursor: default;
+}
+
+.skill-badge {
+    filter: brightness(0);
+}
+
+body.dark .skill-badge {
+    box-shadow: 4px 4px 0px rgb(255, 255, 255);
+    border-color: #4b5563;
+    color: #e5e7eb;
+    filter: brightness(1);
+
 }
 
 .skill-badge i {
@@ -1151,7 +1252,7 @@ body:not(.dark) .badge-glass:hover {
 
 
 body.dark .skill-badge {
-    background: #374151;
+    background: #18181B;
     border-color: #4b5563;
     color: #e5e7eb;
 }
@@ -1222,7 +1323,9 @@ body.dark .skill-badge .fa-github {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular;
     font-size: 14px;
     transition: color 0.3s ease;
 }
@@ -1240,7 +1343,9 @@ body.dark .skill-badge .fa-github {
 }
 
 .project-title {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: OpenSans-Regular;
     font-size: 4rem;
     font-weight: 900;
     color: var(--principal);
@@ -1249,7 +1354,9 @@ body.dark .skill-badge .fa-github {
 }
 
 .project-subtitle {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: OpenSans-Regular;
     font-size: 16px;
     color: var(--secundario);
     margin: 0 0 2rem 0;
@@ -1265,9 +1372,10 @@ body.dark .skill-badge .fa-github {
 }
 
 .btn-project {
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular;
     padding: 0.75rem 1.5rem;
-    border-radius: 8px;
     text-decoration: none;
     font-weight: 500;
     text-align: center;
@@ -1285,8 +1393,11 @@ body.dark .skill-badge .fa-github {
 }
 
 .btn-primary {
-    background: var(--principal);
+    background: black;
     color: white;
+    box-shadow: 5px 5px 0px #000;
+    border: 1px solid #fff;
+
 }
 
 .btn-primary:hover {
@@ -1295,13 +1406,14 @@ body.dark .skill-badge .fa-github {
 }
 
 .btn-secondary {
-    background: transparent;
-    color: var(--principal);
-    border: 1px solid var(--gris_bordes);
+    border: 1px solid #fff;
+    background: #00AA47;
+    color: white;
+    box-shadow: 5px 5px 0px #00AA47;
 }
 
 .btn-secondary:hover {
-    background: var(--gris_bordes);
+    opacity: 0.8;
     transform: translateY(-2px);
 }
 
@@ -1310,9 +1422,10 @@ body.dark .skill-badge .fa-github {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 4rem;
     margin-bottom: 4rem;
-    padding: 2rem 0;
-    border-top: 1px solid var(--gris_bordes);
-    border-bottom: 1px solid var(--gris_bordes);
+    background: #FFA61E;
+    padding: 20px;
+    border: 1px solid #000;
+    box-shadow: 6px 6px 0px #FFA61E;
 }
 
 .meta-item {
@@ -1322,16 +1435,20 @@ body.dark .skill-badge .fa-github {
 }
 
 .meta-label {
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular;
     font-size: 12px;
-    color: var(--secundario);
+    color: black;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
 }
 
 .meta-value {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: OpenSans-Regular;
     color: var(--principal);
     font-weight: 500;
 }
@@ -1343,7 +1460,9 @@ body.dark .skill-badge .fa-github {
 }
 
 .tech-item {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: OpenSans-Regular;
     color: var(--principal);
     font-weight: 500;
     font-size: 14px;
@@ -1354,7 +1473,9 @@ body.dark .skill-badge .fa-github {
 }
 
 .section-title {
-    font-family: OpenSans-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: OpenSans-Regular;
     font-size: 22px;
     color: var(--principal);
     font-weight: 900;
@@ -1362,7 +1483,9 @@ body.dark .skill-badge .fa-github {
 }
 
 .section-text {
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular;
     font-size: 16px;
     color: var(--secundario);
     line-height: 1.7;
@@ -1376,7 +1499,9 @@ body.dark .skill-badge .fa-github {
 }
 
 .features-list li {
-    font-family: Inconsolata-Regular;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular;
     font-size: 16px;
     color: var(--secundario);
     padding: 0.75rem 0;
@@ -1397,7 +1522,6 @@ body.dark .skill-badge .fa-github {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
     object-fit: cover;
     max-height: 320px;
 }
@@ -1421,8 +1545,8 @@ body.dark .skill-badge .fa-github {
     display: flex;
     flex-direction: column;
     background: #ffffff;
-    border: 1px solid var(--gris_bordes);
-    border-radius: 12px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 0px rgb(0, 0, 0);
     overflow: hidden;
     transition: transform 0.18s ease, box-shadow 0.18s ease;
     width: 100%;
@@ -1600,11 +1724,15 @@ body.dark .screenshot-description {
 
 .certificado-descripcion,
 .certificado-descripcion * {
-    font-family: Inconsolata-Regular, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
 }
 
 .certificado .toggle-btn {
-    font-family: inherit !important;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: inherit !important;
 }
 
 .kaggle-badge,
@@ -1619,8 +1747,8 @@ body.dark .screenshot-description {
     transition: margin 0.18s ease, transform 0.18s ease;
 }
 
-.badges-row > div:hover,
-.badges-row > div:focus-within {
+.badges-row>div:hover,
+.badges-row>div:focus-within {
     margin-right: 88px;
     z-index: 30;
 }
@@ -1639,7 +1767,9 @@ body.dark .screenshot-description {
     top: 50%;
     transform: translateY(-60%);
     display: block;
-    font-family: Inconsolata-Regular, sans-serif;
+    font-family: "Poppins", sans-serif;
+    y: "Poppins", sans-serif;
+    y: Inconsolata-Regular, sans-serif;
     font-size: 13px;
     color: var(--principal);
     opacity: 0;
@@ -1677,5 +1807,53 @@ body.dark .screenshot-description {
         display: inline-block;
         white-space: normal;
         z-index: auto;
+    }
+}
+
+.injected-apple-switch {
+    position: fixed;
+    right: 18px;
+    top: 20px;
+    width: 52px;
+    height: 30px;
+    border-radius: 999px;
+    background: #222;
+    border: none;
+    padding: 3px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: background .22s ease
+}
+
+.injected-apple-switch .knob {
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateX(0);
+    transition: transform .22s cubic-bezier(.2, .9, .3, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .18)
+}
+
+.injected-apple-switch.active {
+    background: linear-gradient(90deg, #ffd54f, #ff8a65)
+}
+
+.injected-apple-switch.active .knob {
+    transform: translateX(22px)
+}
+
+.injected-apple-switch:focus {
+    outline: 3px solid rgba(100, 150, 255, .18);
+    outline-offset: 3px
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+    .injected-apple-switch,
+    .injected-apple-switch .knob {
+        transition: none
     }
 }
