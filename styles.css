@@ -171,6 +171,7 @@ button {
     background-image:
         linear-gradient(to right, #f0f0f0 1px, transparent 1px),
         linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+    background-attachment: fixed;
 }
 
 body.dark {
