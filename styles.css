@@ -1573,3 +1573,8 @@ body.dark .screenshot-description {
         z-index: auto;
     }
 }
+
+
+.educacion .highlight {
+    font-weight: 300;
+}
