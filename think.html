@@ -120,55 +120,64 @@
             <article class="project-section general">
                 <h2 class="section-title">Capturas del proyecto</h2>
                 <div class="screenshots-grid">
-                    <div class="screenshot-item">
-                        <div class="screenshot-placeholder">
-                            <img src="img/Dashboard_Desktop (1).png" alt="Dashboard" class="zoomable"
-                                data-full="img/Dashboard_Desktop (1).png">
-                        </div>
-                        <div class="screenshot-content">
-                            <h3 class="screenshot-title">Dashboard Personalizable</h3>
-                            <p class="screenshot-description">
-                                Vista principal, con un dashboard con diseño modular y widgets personalizables.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="screenshot-item">
-                        <div class="screenshot-placeholder">
-                            <img src="img/think-commits.png" alt="Vista de Curso" class="zoomable"
-                                data-full="img/think-commits.png">
-                        </div>
-                        <div class="screenshot-content">
-                            <h3 class="screenshot-title">Visualización de Repositorios</h3>
-                            <p class="screenshot-description">
-                                Acceso directo a tus repositorios de GitHub, con información relevante y actualizada.
-                            </p>
+                    <div class="screenshot-wrapper">
+                        <div class="zoom-prompt"><img src="img/arrow.svg" alt="flecha">Pincha para ampliarme</div>
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/Dashboard_Desktop (1).png" alt="Dashboard" class="zoomable"
+                                    data-full="img/Dashboard_Desktop (1).png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Dashboard Personalizable</h3>
+                                <p class="screenshot-description">
+                                    Vista principal, con un dashboard con diseño modular y widgets personalizables.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="screenshot-item">
-                        <div class="screenshot-placeholder">
-                            <img src="img/think-metricas.png" alt="Métricas" class="zoomable"
-                                data-full="img/think-metricas.png">
-                        </div>
-                        <div class="screenshot-content">
-                            <h3 class="screenshot-title">Métricas de Progreso</h3>
-                            <p class="screenshot-description">
-                                Seguimiento detallado del avance académico con visualizaciones intuitivas.
-                            </p>
+                    <div class="screenshot-wrapper">
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/think-commits.png" alt="Vista de Curso" class="zoomable"
+                                    data-full="img/think-commits.png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Visualización de Repositorios</h3>
+                                <p class="screenshot-description">
+                                    Acceso directo a tus repositorios de GitHub, con información relevante y actualizada.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="screenshot-item">
-                        <div class="screenshot-placeholder">
-                            <img src="img/think-calendario.png" alt="Configuración" class="zoomable"
-                                data-full="img/think-calendario.png">
+                    <div class="screenshot-wrapper">
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/think-metricas.png" alt="Métricas" class="zoomable"
+                                    data-full="img/think-metricas.png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Métricas de Progreso</h3>
+                                <p class="screenshot-description">
+                                    Seguimiento detallado del avance académico con visualizaciones intuitivas.
+                                </p>
+                            </div>
                         </div>
-                        <div class="screenshot-content">
-                            <h3 class="screenshot-title">Calendario</h3>
-                            <p class="screenshot-description">
-                                Visualización de eventos y tareas programadas, con opciones de personalización.
-                            </p>
+                    </div>
+
+                    <div class="screenshot-wrapper">
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/think-calendario.png" alt="Configuración" class="zoomable"
+                                    data-full="img/think-calendario.png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Calendario</h3>
+                                <p class="screenshot-description">
+                                    Visualización de eventos y tareas programadas, con opciones de personalización.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -223,26 +232,6 @@
             </div>
         </div>
     </main>
-
-    <a href="#top" id="toTop" style="display: none;"><img src="img/flecha-hacia-arriba.webp" width="50" height="50"
-            alt="imagen go to top"></a>
-
-    <script>
-        var mybutton = document.getElementById("toTop")
-        window.onscroll = function () { scrollFunction() };
-        function scrollFunction() {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-        mybutton.onclick = function () { topFunction() };
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
 
     <script>
         (function () {

@@ -434,10 +434,6 @@ body.dark .general a {
     transition: background-color 0.2s ease;
 }
 
-.link-icon:hover {
-    background-color: #f5f5f5;
-}
-
 .project-description {
     font-size: 14px !important;
     color: var(--secundario);
@@ -469,6 +465,8 @@ body.dark .proyecto-card {
 
 body.dark .proyecto-card:hover {
     border-color: #888888;
+        box-shadow: 0px 0px 0px var(--gris_bordes);
+
 }
 
 body.dark .project-header h3 {
@@ -484,8 +482,8 @@ body.dark .tech-tag {
     color: var(--principal);
 }
 
-body.dark .link-icon:hover {
-    background-color: #404040;
+body.dark .exterior {
+    filter: invert(1);
 }
 
 @media screen and (max-width: 470px) {
@@ -671,6 +669,10 @@ body.dark .link-icon:hover {
     margin-bottom: 15px;
 }
 
+.certificado img {
+    filter: brightness(0.1);
+}
+
 .certificado h3 {
     margin-bottom: 15px;
     width: 100%;
@@ -684,7 +686,7 @@ body.dark .link-icon:hover {
 }
 
 .certificado h4 {
-    margin-top: 10px;
+    margin-top: -15px;
     width: 100%;
 }
 
@@ -1318,6 +1320,30 @@ body.dark .skill-badge .fa-github {
     padding-top: 24px;
 }
 
+.zoom-prompt {
+    font-size: 12px;
+    color: var(--secundario);
+    padding-bottom: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+body.dark .zoom-prompt {
+    color: var(--gris_bordes);
+}
+
+body.dark .zoom-prompt img {
+    filter: invert(1);
+}
+
+.screenshot-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .screenshot-item {
     display: flex;
     flex-direction: column;
@@ -1329,6 +1355,12 @@ body.dark .skill-badge .fa-github {
     width: 100%;
     max-width: 900px;
     box-sizing: border-box;
+}
+
+.screenshot-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 14px 14px 0px rgb(0, 0, 0);
+    cursor: zoom-in;
 }
 
 .screenshot-placeholder {
