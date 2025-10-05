@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SneakVault - E-commerce de Zapatillas y Camisetas por Eloy García">
+    <title>SneakVault - Proyecto | Eloy García</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" type="image/png" href="img/102689282.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            if (window.__applyDarkPref) return;
+            window.__applyDarkPref = true;
+            function applyPref() {
+                try {
+                    var stored = localStorage.getItem('prefers-dark');
+                    var shouldDark = stored === '1' ? true : (stored === '0' ? false : false);
+                    document.body.classList.toggle('dark', !!shouldDark);
+                } catch (e) {}
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyPref); else applyPref();
+        })();
+    </script>
+</head>
+
+<body class="body-grid">
+    <main>
+        <div class="project-container">
+            <div class="design-warning">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p><strong>Advertencia:</strong> Este proyecto está actualmente en proceso de rediseño. La información y las capturas de pantalla pueden no reflejar el estado final.</p>
+            </div>
+            <nav class="back-nav">
+                <a href="index.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver al portfolio
+                </a>
+            </nav>
+            
+            <header class="project-hero">
+                <div>
+                    <div class="hero-image">
+                        <img src="img/SNEAKVAULT.png" alt="SneakVault Logo" class="hero-img">
+                    </div>
+                    <p class="project-subtitle">E-commerce de Zapatillas y Camisetas.</p>
+                </div>
+
+                <div class="project-actions">
+                    <a href="https://github.com/E7OY/sneakvault-ecommerce" target="_blank" class="btn-project btn-primary">
+                        <i class="fa-brands fa-github"></i>
+                        Ver código
+                    </a>
+                    <a href="https://github.com/E7OY/sneakvault-ecommerce#readme"
+                        class="btn-project btn-tertiary">
+                        <i class="fa-solid fa-file-alt"></i>
+                        README
+                    </a>
+                </div>
+            </header>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Mi Rol</div>
+                    <div class="meta-value">Full Stack Developer</div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Equipo</div>
+                    <div class="meta-value">Eloy García Martínez (yo)</div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Tecnologías</div>
+                    <div class="tech-list">
+                        <span class="tech-item">React</span>
+                        <span class="tech-item">Firebase</span>
+                        <span class="tech-item">Bootstrap</span>
+                        <span class="tech-item">React Router</span>
+                        <span class="tech-item">Framer Motion</span>
+                    </div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Timeline</div>
+                    <div class="meta-value">2024</div>
+                </div>
+            </div>
+
+            <article class="project-section general">
+                <h2 class="section-title">Contexto</h2>
+                <p class="section-text">
+                    Este proyecto consiste en una aplicación web de venta de zapatillas y camisetas, desarrollada con React para el frontend y Firebase para la base de datos y la parte de autenticación. El objetivo principal es ofrecer una plataforma intuitiva y atractiva para la compra de productos relacionados con el calzado y la vestimenta urbana.
+                </p>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Características principales</h2>
+                <ul class="features-list">
+                    <li><b>Página Principal:</b> Muestra una descripción de SneakVault, productos destacados y información de contacto.</li>
+                    <li><b>Página de Productos:</b> Permite visualizar todos los productos, con opciones de paginación, búsqueda y ordenación.</li>
+                    <li><b>Página de Detalle de Producto:</b> Muestra información detallada de cada producto y permite agregarlo al carrito.</li>
+                    <li><b>Página de Carrito:</b> Permite visualizar los productos seleccionados, modificar cantidades y eliminar productos.</li>
+                    <li><b>Autenticación:</b> Formularios de Login y Registro para usuarios, con validaciones y mensajes de error.</li>
+                </ul>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Capturas del proyecto</h2>
+                <div class="screenshots-grid">
+
+                    <div class="screenshot-wrapper">
+                        <div class="zoom-prompt"><img src="img/arrow.svg" alt="flecha">Pincha para ampliarme</div>
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/sneakvault-home.png" alt="Captura 1" class="zoomable" data-full="img/sneakvault-home.png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Home</h3>
+                                <p class="screenshot-description">Página principal con información de undefined studios.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-wrapper">
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/sneakvault-products.png" alt="Captura 1" class="zoomable" data-full="img/sneakvault-products.png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Vista de Productos</h3>
+                                <p class="screenshot-description">Página principal con el listado de productos disponibles.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-wrapper">
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/sneakvault-product.png" alt="Captura 2" class="zoomable" data-full="img/sneakvault-product.png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Detalle de Producto</h3>
+                                <p class="screenshot-description">Vista detallada de un producto con opción de añadir al carrito.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-wrapper">
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/sneakvault-carrito.png" alt="Captura 2" class="zoomable" data-full="img/sneakvault-carrito.png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Carrito de compra</h3>
+                                <p class="screenshot-description">Vista del carrito de compra con los productos seleccionados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-section general" id="instalacion">
+                <h2 class="section-title">Instalación y Configuración</h2>
+                <p class="section-text">
+                    Para ejecutar este proyecto localmente, clona el repositorio desde GitHub, instala las dependencias con `npm install` y configura tus credenciales de Firebase en un archivo `firebase.utils.tsx`.
+                </p>
+                <h3 class="section-title" style="font-size:18px; margin-top:8px">Dependencias Adicionales</h3>
+                <ul class="features-list" style="margin-top:0.5rem">
+                    <li><b>Bootstrap:</b> Framework CSS para estilos y diseño responsive.</li>
+                    <li><b>React Router:</b> Librería para la gestión de rutas en la aplicación.</li>
+                    <li><b>Firebase:</b> Plataforma con servicios de autenticación y base de datos.</li>
+                    <li><b>Framer Motion:</b> Librería para crear animaciones y transiciones en React.</li>
+                </ul>
+            </article>
+
+            <article class="project-section general" id="licencia-creditos">
+                <h2 class="section-title">Licencia y créditos</h2>
+                <p class="section-text">
+                    © 2024 Eloy García Martínez & Group 71. Imágenes e iconos pertenecen a sus respectivos propietarios.
+                </p>
+            </article>
+
+            <div id="imageModal" class="image-modal" aria-hidden="true" role="dialog" aria-label="Imagen ampliada">
+                <div class="image-modal-content">
+                    <button class="image-modal-close" aria-label="Cerrar imagen">&times;</button>
+                    <img src="" alt="" class="image-modal-img">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const modal = document.getElementById('imageModal');
+            const modalImg = modal.querySelector('.image-modal-img');
+            const closeBtn = modal.querySelector('.image-modal-close');
+            const zoomables = document.querySelectorAll('img.zoomable');
+
+            function openModal(src, alt) {
+                modalImg.src = src;
+                modalImg.alt = alt || '';
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeModal() {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+                modalImg.src = '';
+                document.body.style.overflow = '';
+            }
+
+            zoomables.forEach(img => {
+                img.addEventListener('click', (e) => {
+                    const full = img.dataset.full || img.src;
+                    openModal(full, img.alt);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+            });
+        })();
+    </script>
+</body>
+
+</html>
+</html>

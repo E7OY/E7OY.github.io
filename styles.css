@@ -1122,6 +1122,40 @@ body.dark .skill-badge .fa-github {
     padding: 2rem 0;
 }
 
+.design-warning {
+    background-color: #FF5500;
+    box-shadow: -4px -4px 0px #FF5500, -8px -8px 0px #FF5500, -12px -12px 0px #FF5500;
+    border: 1px solid #000;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+}
+
+.design-warning i {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.design-warning p {
+    margin: 0;
+    font-size: 14px;
+    color: #363636;
+    line-height: 1.6;
+    font-weight: 200;
+}
+
+body.dark .design-warning i {
+    color: #ffffff;
+}
+
+body.dark .design-warning p {
+    color: #fff;
+}
+
 .back-nav {
     margin-bottom: 2rem;
 }
@@ -1212,6 +1246,17 @@ body.dark .skill-badge .fa-github {
     box-shadow: 0px 0px 0px #00AA47;
 }
 
+.btn-tertiary {
+    border: 1px solid #fff;
+    background: #7D00FE;
+    color: white;
+    box-shadow: 5px 5px 0px #7D00FE;
+}
+
+.btn-tertiary:hover {
+    box-shadow: 0px 0px 0px #7D00FE;
+}
+
 .project-meta {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1225,6 +1270,23 @@ body.dark .skill-badge .fa-github {
 }
 .project-meta:hover {
     box-shadow: 6px 6px 0px #FFA61E, 12px 12px 0px #FFA61E, 18px 18px 0px #FFA61E;
+    transition: box-shadow 0.3s ease;
+}
+
+.project-meta2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 4rem;
+    margin-bottom: 4rem;
+    background: #00AA47;
+    padding: 20px;
+    border: 1px solid #000;
+    box-shadow: 6px 6px 0px #00AA47;
+    transition: box-shadow 0.8s ease;
+}
+
+.project-meta2:hover {
+    box-shadow: 6px 6px 0px #00AA47, 12px 12px 0px #00AA47, 18px 18px 0px #00AA47;
     transition: box-shadow 0.3s ease;
 }
 
@@ -1303,6 +1365,9 @@ body.dark .skill-badge .fa-github {
     display: block;
     object-fit: cover;
     max-height: 320px;
+}
+body.dark .hero-image img {
+    filter: invert(1);
 }
 
 .screenshots-grid {
@@ -1484,8 +1549,12 @@ body.dark .features-list li {
 }
 
 body.dark .screenshot-item {
-    background: #262626;
-    border-color: #404040;
+    background: #000000;
+    border-color: #ffffff;
+    box-shadow: 10px 10px 0px white;
+}
+body.dark .screenshot-item:hover {
+    box-shadow: 14px 14px 0px white;
 }
 
 body.dark .screenshot-title {

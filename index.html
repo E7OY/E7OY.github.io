@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
     <link rel="icon" type="image/png" href="img/102689282.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        (function () {
+            if (window.__applyDarkPref) return;
+            window.__applyDarkPref = true;
+            function applyPref() {
+                try {
+                    var stored = localStorage.getItem('prefers-dark');
+                    var shouldDark = stored === '1' ? true : (stored === '0' ? false : false); // Default to light
+                    document.body.classList.toggle('dark', !!shouldDark);
+                } catch (e) {}
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyPref); else applyPref();
+        })();
+    </script>
 </head>
 
 <body class="body-grid">
@@ -191,44 +205,7 @@
             </div>
 
             <div class="fila-certificados">
-                <div class="certificado">
-                    <h3>
-                        Google<br>
-                        Curso de Introducción al Desarrollo Web: HTML y CSS (1/2) y (2/2)
-                    </h3>
-                    <h3 class="fecha">
-                        11.2022 - 80 hr
-                    </h3>
-                    <p class="certificado-descripcion">
-                        Historia de la Web: Exploré cómo nació y evolucionó la Web hasta convertirse en lo que es hoy.
-                        Funcionamiento de la Web: Comprendí los principios básicos de cómo funciona la Web, incluyendo
-                        protocolos como HTTP y HTTPS.
-                        Creación de páginas web: Aprendí a escribir y estructurar correctamente páginas web utilizando
-                        HTML5.
-                        Publicación de sitios web: Conocí los pasos necesarios para alojar y publicar sitios web en
-                        servidores.
-                        Buenas prácticas en estructuración web: Me familiaricé con las mejores prácticas para
-                        estructurar contenido y aplicar estilos CSS para mejorar la apariencia visual de las páginas.
-                        Definición de la presentación de una página web: Aprendí a aplicar estilos CSS para definir la
-                        apariencia visual de páginas web.
-                        Definición de la presentación de los elementos de una página web: Me familiaricé con la
-                        estilización individual de componentes web utilizando CSS.
-                        Maquetación de una página web: Adquirí conocimientos sobre cómo estructurar y organizar el
-                        contenido de una página web de manera profesional utilizando técnicas de diseño y maquetación
-                        con CSS.
-                        Logro del éxito de una página web: Entendí los factores clave para crear páginas web exitosas,
-                        incluyendo la usabilidad, accesibilidad y rendimiento.
-                    </p>
-                    <div style="display: flex;">
-                        <h4><a href="https://skillshop.exceedlms.com/student/award/B7Suy139icPRWuSaDjQZDjNU"
-                            target="_blank">Certificado 1 <img src="img/exterior.webp" width="12" height="12"
-                            alt="logo enlace"></a></h4>
-                            <h4><a href="https://skillshop.exceedlms.com/student/award/tfUBYw1ZhdzNoWaczBZQE6Dd"
-                                target="_blank">Certificado 2 <img src="img/exterior.webp" width="12" height="12"
-                                alt="logo enlace"></a></h4>
-                    </div>
-                </div>
-
+                
                 <div class="certificado">
                     <h3>
                         BIG School<br>
@@ -249,13 +226,36 @@
                         Aprendí a crear y gestionar flujos de trabajo con n8n, una herramienta de automatización de
                         procesos.
                     </p>
-                    <h4><a href="https://skillshop.exceedlms.com/student/award/tfUBYw1ZhdzNoWaczBZQE6Dd"
-                            target="_blank">Certificado <img src="img/exterior.webp" width="12" height="12"
+                    <h4><a href="https://drive.google.com/file/d/1z70CsJo6ogOyUj9b50A27TuLiJAxiv0a/view"
+                        target="_blank">Certificado <img class="exterior" src="img/exterior.webp" width="12" height="12"
+                        alt="logo enlace"></a></h4>
+                    </div>
+                    <div class="certificado">
+                        <h3>
+                            Udemy<br>
+                            Máster en Java , 0 a experto, Universidad, GS, DAM, DAW
+                        </h3>
+                        <h3 class="fecha">
+                            10.2024 - 54 hr
+                        </h3>
+                        <p class="certificado-descripcion">
+                            Bases de Java: Desde variables hasta estructuras de control.
+                            Programación Orientada a Objetos: Clases, métodos, herencia, polimorfismo.
+                            Aprobar Exámenes y Conseguir Empleo: Preparación para certificaciones y entrevistas.
+                            Bases de Datos: Manejo de bases de datos con JDBC.
+                            Programación Funcional: Uso de expresiones Lambda y Stream API.
+                            Programación Multihilo.
+                            Manejo de Excepciones y Colecciones.
+                            Interfaces Gráficas: Creación de GUIs con SWING.
+                            Comunicación entre Objetos en Java.
+                        </p>
+                        <h4><a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-77258feb-e21d-4a8c-8086-00fbd2307b82.pdf"
+                                target="_blank">Certificado <img class="exterior" src="img/exterior.webp" width="12" height="12"
                                 alt="logo enlace"></a></h4>
-                </div>
-            </div>
-
-            <div class="fila-certificados">
+                            </div>
+                        </div>
+                        
+                        <div class="fila-certificados">
                 <div class="certificado">
                     <h3>
                         Udemy<br>
@@ -277,7 +277,7 @@
                         Publicación de Sitios Web: Proceso de subir páginas web a Internet.
                     </p>
                     <h4><a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-5fd77b2a-47f9-419e-9315-de0ef119b8b0.pdf"
-                            target="_blank">Certificado <img src="img/exterior.webp" width="12" height="12"
+                            target="_blank">Certificado <img class="exterior" src="img/exterior.webp" width="12" height="12"
                                 alt="logo enlace"></a></h4>
                 </div>
 
@@ -297,40 +297,56 @@
                     </p>
                     <h4><a href="https://openwebinars.net/cert/frd7" target="_blank">Certificado <img src="img/exterior.webp" width="12" height="12" alt="logo enlace"></a></h4>
                 </div> -->
-                <div class="certificado">
-                    <h3>
-                        Udemy<br>
-                        Máster en Java , 0 a experto, Universidad, GS, DAM, DAW
-                    </h3>
-                    <h3 class="fecha">
-                        10.2024 - 54 hr
-                    </h3>
-                    <p class="certificado-descripcion">
-                        Bases de Java: Desde variables hasta estructuras de control.
-                        Programación Orientada a Objetos: Clases, métodos, herencia, polimorfismo.
-                        Aprobar Exámenes y Conseguir Empleo: Preparación para certificaciones y entrevistas.
-                        Bases de Datos: Manejo de bases de datos con JDBC.
-                        Programación Funcional: Uso de expresiones Lambda y Stream API.
-                        Programación Multihilo.
-                        Manejo de Excepciones y Colecciones.
-                        Interfaces Gráficas: Creación de GUIs con SWING.
-                        Comunicación entre Objetos en Java.
-                    </p>
-                    <h4><a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-77258feb-e21d-4a8c-8086-00fbd2307b82.pdf"
-                            target="_blank">Certificado <img src="img/exterior.webp" width="12" height="12"
-                                alt="logo enlace"></a></h4>
-                </div>
-        </article>
 
-        <article class="proyectos general">
-            <h2 id="proyectos">Proyectos</h2>
-            <div class="contenedor-proyectos">
+
+                        <div class="certificado">
+                            <h3>
+                                Google<br>
+                                Curso de Introducción al Desarrollo Web: HTML y CSS (1/2) y (2/2)
+                            </h3>
+                            <h3 class="fecha">
+                                11.2022 - 80 hr
+                            </h3>
+                            <p class="certificado-descripcion">
+                                Historia de la Web: Exploré cómo nació y evolucionó la Web hasta convertirse en lo que es hoy.
+                                Funcionamiento de la Web: Comprendí los principios básicos de cómo funciona la Web, incluyendo
+                                protocolos como HTTP y HTTPS.
+                                Creación de páginas web: Aprendí a escribir y estructurar correctamente páginas web utilizando
+                                HTML5.
+                                Publicación de sitios web: Conocí los pasos necesarios para alojar y publicar sitios web en
+                                servidores.
+                                Buenas prácticas en estructuración web: Me familiaricé con las mejores prácticas para
+                                estructurar contenido y aplicar estilos CSS para mejorar la apariencia visual de las páginas.
+                                Definición de la presentación de una página web: Aprendí a aplicar estilos CSS para definir la
+                                apariencia visual de páginas web.
+                                Definición de la presentación de los elementos de una página web: Me familiaricé con la
+                                estilización individual de componentes web utilizando CSS.
+                                Maquetación de una página web: Adquirí conocimientos sobre cómo estructurar y organizar el
+                                contenido de una página web de manera profesional utilizando técnicas de diseño y maquetación
+                                con CSS.
+                                Logro del éxito de una página web: Entendí los factores clave para crear páginas web exitosas,
+                                incluyendo la usabilidad, accesibilidad y rendimiento.
+                            </p>
+                            <div style="display: flex;">
+                                <h4><a href="https://skillshop.exceedlms.com/student/award/B7Suy139icPRWuSaDjQZDjNU"
+                                    target="_blank">Certificado 1 <img class="exterior" src="img/exterior.webp" width="12" height="12"
+                                    alt="logo enlace"></a></h4>
+                                    <h4><a href="https://skillshop.exceedlms.com/student/award/tfUBYw1ZhdzNoWaczBZQE6Dd"
+                                        target="_blank">Certificado 2 <img class="exterior" src="img/exterior.webp" width="12" height="12"
+                                        alt="logo enlace"></a></h4>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="proyectos general">
+                        <h2 id="proyectos">Proyectos</h2>
+                        <div class="contenedor-proyectos">
 
                 <div class="proyecto-card">
                     <div class="project-header">
                         <h3><a href="think.html"
-                                style="text-decoration: none; color: inherit;">think-educational-platform</a></h3>
-                        <div class="project-links">
+                            style="text-decoration: none; color: inherit;">think-educational-platform</a></h3>
+                            <div class="project-links">
                             <a href="https://github.com/E7OY/EjerciciosPHP" target="_blank" class="link-icon ">
                                 <img class="github" src="img/github-cajas.webp" width="15" height="15"
                                     alt="imagen github">
@@ -362,6 +378,10 @@
                             <a href="https://github.com/E7OY/SneakVault" target="_blank" class="link-icon">
                                 <img class="github" src="img/github-cajas.webp" width="15" height="15"
                                     alt="imagen github">
+                            </a>
+                            <a href="sneakvault.html" class="link-icon exterior">
+                                <img src="img/exterior.webp" width="15" height="15" alt="">
+                              
                             </a>
                         </div>
                     </div>
@@ -646,8 +666,7 @@
                 document.body.appendChild(btn);
 
                 const stored = localStorage.getItem('prefers-dark');
-                const prefersSystem = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const initial = stored === '1' ? true : (stored === '0' ? false : (stored === null ? true : prefersSystem));
+                const initial = stored === '1' ? true : (stored === '0' ? false : false); // Default to light
                 setState(initial, false);
 
                 if (window.matchMedia) {
