@@ -183,7 +183,6 @@ body.dark article .img-nombre:hover {
     position: relative;
     z-index: 1;
     border: 1px solid #eee;
-    /* background: linear-gradient(35deg, #6495ED 0%, #4169E1 40%, #8A2BE2 100%); */
     padding: 10px 0px 0px 0px;
 }
 
@@ -525,11 +524,11 @@ body.dark .exterior {
         display: none;
     }
 
-    .img-nombre img {
-        width: 40%;
-        height: auto;
+    .img-nombre  {
+        position: absolute;
+        width: 35% !important;
         border-radius: 90%;
-        margin: 60px -10px;
+        margin: 80px -30px;
         box-shadow: none;
     }
 
@@ -598,6 +597,12 @@ body.dark .exterior {
         width: 50px;
     }
 
+    .injected-apple-switch {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
 
     .switch {
         background: #343d5b;
@@ -606,7 +611,7 @@ body.dark .exterior {
         top: 0;
         right: 0;
         left: 30;
-        margin: 20px 10px;
+        margin: 20px -40px;
         cursor: pointer;
         display: flex;
         outline: none;
@@ -1030,7 +1035,7 @@ body:not(.dark) .badge-glass:hover {
 }
 
 .skill-badge {
-    filter: brightness(0);
+    filter: brightness(0.4);
 }
 
 body.dark .skill-badge {
