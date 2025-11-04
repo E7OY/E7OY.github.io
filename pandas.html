@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pandas Cheatsheet - Guía rápida de la librería Pandas de Python por Eloy García">
+    <title>Pandas Cheatsheet | Eloy García</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" type="image/png" href="img/eloy.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hljs-light-theme">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" id="hljs-dark-theme" disabled>
+    <script>
+        (function () {
+            if (window.__applyDarkPref) return;
+            window.__applyDarkPref = true;
+            function applyPref() {
+                try {
+                    var stored = localStorage.getItem('prefers-dark');
+                    var shouldDark = stored === '1' ? true : (stored === '0' ? false : false);
+                    document.body.classList.toggle('dark', !!shouldDark);
+                } catch (e) {}
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyPref); else applyPref();
+        })();
+    </script>
+</head>
+
+<body class="body-grid cheatsheet-page">
+    <main>
+        <div class="project-container full-width">
+            <nav class="back-nav">
+                <a href="index.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver al portfolio
+                </a>
+            </nav>
+
+            <header class="project-hero" style="gap: 1rem; align-items: center; margin-bottom: 2rem;">
+                <div>
+                    <h1 class="project-title" style="font-size: 3rem; margin-bottom: 0.5rem;">Pandas Cheatsheet</h1>
+                    <p class="project-subtitle" style="max-width: 600px;">Guía de referencia rápida para la manipulación y análisis de datos con Pandas en Python.</p>
+                </div>
+                <div class="hero-image" style="max-width: 120px;">
+                    <img src="img/pandaslogo.webp" alt="Pandas Logo" class="hero-img" style="max-height: 120px; object-fit: contain; filter: brightness(0);">
+                </div>
+            </header>
+
+            <div class="cheatsheet-index">
+                <a href="#instalacion">Instalación</a>
+                <a href="#series">Series</a>
+                <a href="#dataframes">DataFrames</a>
+                <a href="#lectura-escritura">Lectura y Escritura</a>
+                <a href="#inspeccion">Inspección</a>
+                <a href="#seleccion">Selección y Filtrado</a>
+                <a href="#modificacion">Modificación</a>
+                <a href="#operaciones">Operaciones</a>
+                <a href="#graficas">Gráficas</a>
+            </div>
+
+            <div class="cheatsheet-grid">
+                <article id="instalacion" class="project-section general cheatsheet-section">
+                    <h2 class="section-title">Instalación e Importación</h2>
+                    <p class="section-text">Instala e importa las librerías necesarias.</p>
+                    <pre><code class="language-python"># Instalación vía conda
+conda install pandas numpy matplotlib
+
+# Importación estándar
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt</code></pre>
+
+                    <h3>Otras operaciones</h3>
+                    <pre><code class="language-python">
+
+
+# Tipo de dato
+type(s3)
+
+# Crear una Serie con un rango de números
+numeros = np.arange(1, 10, 1)
+serie_numeros = pd.Series(numeros, index=numeros)
+
+cuadrados = serie_numeros ** 2
+cuadrados
+</code></pre>
+                </article>
+
+                <article id="series" class="project-section general cheatsheet-section">
+                    <h2 class="section-title">Series</h2>
+                    <p class="section-text">Array unidimensional etiquetado.</p>
+                    <h3>Crear una Serie</h3>
+                    <pre><code class="language-python">
+# A partir de un array de numpy
+s1 = pd.Series(np.array([1,2,3,4,5,6]))
+
+# Con índices personalizados
+notas = np.array([5,10,7,8])
+alumnos = np.array(["Estudiante 1","Estudiante 2","Estudiante 3","Estudiante 4"])
+s2 = pd.Series(notas, index=alumnos)
+
+# Desde un diccionario
+notas_dict = {'Estudiante 1': 5, 'Estudiante 2': 10}
+s3 = pd.Series(notas_dict)</code></pre>
+                    <h3>Asignación de valores</h3>
+                    <pre><code class="language-python">
+s3['Estudiante 1'] = 10
+s3[1] = 8
+s3[2:] = 9</code></pre>
+                </article>
+
+                <article id="dataframes" class="project-section general cheatsheet-section">
+                    <h2 class="section-title">DataFrames</h2>
+                    <p class="section-text">Estructura bidimensional similar a una tabla.</p>
+                     <h3>Crear un DataFrame</h3>
+                    <pre><code class="language-python">
+# Desde un diccionario de Series
+asignaturas = ['Asignatura 1','Asignatura 2']
+notas = {
+    'Estudiante 1': pd.Series([10,2], index=asignaturas),
+    'Estudiante 2': pd.Series([9,6], index=asignaturas)
+}
+df1 = pd.DataFrame(notas)
+
+# Desde un diccionario de listas
+notas_list = {'María': [10,2,5,6], 'Jose':[9,6,7,4.5]}
+df2 = pd.DataFrame(notas_list)
+df2.index = ['Asignatura 1','Asignatura 2','Asignatura 3','Asignatura 4']</code></pre>
+                </article>
+
+                <article id="lectura-escritura" class="project-section general cheatsheet-section">
+                    <h2 class="section-title">Lectura y Escritura</h2>
+                    <p class="section-text">Cargar y guardar datos desde/hacia archivos.</p>
+                    <pre><code class="language-python"># Leer desde un CSV
+df = pd.read_csv("data/FuelConsumption.csv")
+
+# Leer CSV con parámetros
+# df_custom = pd.read_csv("data.csv", sep=';', header=1)
+
+# Escribir a un CSV
+df.to_csv('nuevo.csv', index=False)</code></pre>
+                </article>
+
+                <article id="inspeccion" class="project-section general cheatsheet-section">
+                    <h2 class="section-title">Inspección de Datos</h2>
+                    <p class="section-text">Funciones para una visión general del DataFrame.</p>
+                    <pre><code class="language-bash">df.info()          # Resumen del conjunto (tipos, nulos)
+df.head()          # Muestra las primeras 5 filas
+df.shape           # Dimensiones del conjunto (filas, columnas)
+df.keys()          # Obtiene los nombres de las columnas o claves del df
+df.dtypes          # Tipos de datos de cada columna
+df.nunique()       # Número de valores únicos (distintos) por columna</code></pre>
+                </article>
+
+                <article id="seleccion" class="project-section general cheatsheet-section">
+                    <h2 class="section-title">Selección y Filtrado</h2>
+                    <p class="section-text">Acceder a subconjuntos de datos.</p>
+                    <h3>Selección</h3>
+                    <pre><code class="language-python">
+# Acceder a un elemento
+df.iloc[0,2] # Por posición
+df.at[2,'ENGINESIZE'] # Por etiqueta
+
+# Seleccionar columnas
+df['ENGINESIZE'] # Como Serie
+df[['ENGINESIZE','CO2EMISSIONS']] # Como DataFrame</code></pre>
+                    <h3>Filtrado</h3>
+                    <pre><code class="language-python">
+# Filtrado condicional
+df_filtrado = df[df['CYLINDERS'] > 6]
+
+# Múltiples condiciones
+df_multi = df[(df['CYLINDERS'] > 6) & (df['MAKE'] == 'BENTLEY')]</code></pre>
+                </article>
+
+                <article id="modificacion" class="project-section general cheatsheet-section">
+                    <h2 class="section-title">Modificación del DataFrame</h2>
+                     <p class="section-text">Añadir o eliminar columnas.</p>
+                    <pre><code class="language-python"># Añadir una columna
+df.insert(1, 'ES_FORD', df['MAKE'] == 'FORD')
+
+# Borrar una columna
+del df['ES_FORD']</code></pre>
+                </article>
+
+                <article id="operaciones" class="project-section general cheatsheet-section">
+                    <h2 class="section-title">Operaciones y Agregaciones</h2>
+                    <p class="section-text">Calcular estadísticas y agrupar datos.</p>
+                    <pre><code class="language-python">
+# Media de la Serie
+s3.mean()
+# o
+np.mean(s3)
+
+# Conteo de valores
+df['MAKE'].value_counts()
+
+# Agrupación (Group By)
+df.groupby('MAKE')['CO2EMISSIONS'].mean()</code></pre>
+                </article>
+
+                <article id="graficas" class="project-section general cheatsheet-section full-span">
+                    <h2 class="section-title">Gráficas</h2>
+                    <p class="section-text">Visualización rápida de datos.</p>
+                </article>
+
+                <article class="project-section general cheatsheet-section">
+                    <h3>Gráfica de Puntos (Scatter)</h3>
+                    <pre><code>
+df[0:100].plot(
+    kind='scatter', 
+    x='FUELCONSUMPTION_HWY', 
+    y='CO2EMISSIONS', 
+    color='DarkBlue',
+    figsize=(20,5)
+)
+plt.show()</code></pre>
+                </article>
+                <article class="project-section general cheatsheet-section">
+                    <h3>Resultado</h3>
+                    <img src="img/grafica-scatter.png" alt="Ejemplo de gráfica de puntos" class="code-img">
+                </article>
+
+                <article class="project-section general cheatsheet-section">
+                    <h3>Gráfica de Barras</h3>
+                    <pre><code>
+df[0:50].plot(
+    kind='bar', 
+    x='FUELCONSUMPTION_HWY', 
+    y='CO2EMISSIONS', 
+    color='Orange',
+    figsize=(20,5)
+)
+plt.show()</code></pre>
+                </article>
+                <article class="project-section general cheatsheet-section">
+                    <h3>Resultado</h3>
+                    <img src="img/grafica-barras.png" alt="Ejemplo de gráfica de barras" class="code-img">
+                </article>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const pre = button.parentElement;
+                const code = pre.querySelector('code');
+                const text = code.innerText;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    button.textContent = 'Copiado!';
+                    button.classList.add('copied');
+                    setTimeout(() => {
+                        button.textContent = 'Copiar';
+                        button.classList.remove('copied');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Error al copiar el texto: ', err);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

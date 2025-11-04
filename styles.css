@@ -99,6 +99,11 @@ body.dark .figma {
     content: url(img/figmaWhite.webp);
 }
 
+.cheatsheet-page main {
+    width: 90%;
+    max-width: 1400px;
+}
+
 main {
     border-radius: 25px;
     margin: 40px 200px;
@@ -1127,6 +1132,53 @@ body.dark .skill-badge .fa-github {
     padding: 2rem 0;
 }
 
+.project-container.full-width {
+    max-width: 1400px;
+}
+
+.cheatsheet-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gris_bordes);
+}
+
+.cheatsheet-index a {
+    text-decoration: none;
+    color: var(--secundario);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.cheatsheet-index a:hover {
+    color: var(--principal);
+    background-color: #f0f0f0;
+    border-color: #ddd;
+    text-decoration: none;
+}
+
+body.dark .cheatsheet-index a {
+    color: #a0a0a0;
+}
+
+body.dark .cheatsheet-index a:hover {
+    color: #fff;
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+.cheatsheet-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+}
+
 .design-warning {
     background-color: #FF5500;
     box-shadow: -4px -4px 0px #FF5500, -8px -8px 0px #FF5500, -12px -12px 0px #FF5500;
@@ -1138,13 +1190,11 @@ body.dark .skill-badge .fa-github {
     gap: 1rem;
     position: relative;
 }
-
 .design-warning i {
     color: #ffffff;
     font-size: 1.2rem;
     margin-top: 0.2rem;
 }
-
 .design-warning p {
     margin: 0;
     font-size: 14px;
@@ -1160,6 +1210,43 @@ body.dark .design-warning i {
 body.dark .design-warning p {
     color: #fff;
 }
+
+
+
+
+.design-cheatsheet {
+    background-color: #00AA47;
+    box-shadow: -4px -4px 0px #00AA47, -8px -8px 0px #00AA47, -12px -12px 0px #00AA47;
+    border: 1px solid #000000;
+    padding: 1rem;
+    margin-top: 40px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+}
+.design-cheatsheet i {
+    color:#ffffff;
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+.design-cheatsheet p {
+    margin: 0;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.6;
+    font-weight: 200;
+}
+
+body.dark .design-cheatsheet i {
+    color: #ffffff;
+}
+
+body.dark .design-cheatsheet p {
+    color: #fff;
+}
+
 
 .back-nav {
     margin-bottom: 2rem;
@@ -1589,6 +1676,10 @@ body.dark .screenshot-description {
         gap: 2rem;
     }
 
+    .cheatsheet-grid {
+        grid-template-columns: 1fr;
+    }
+
     .project-actions {
         flex-direction: row;
     }
@@ -1683,4 +1774,54 @@ body.dark .screenshot-description {
 
 .educacion .highlight {
     font-weight: 300;
+}
+
+.cheatsheet-section pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.cheatsheet-section code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body.dark .cheatsheet-section pre {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #f0f0f0;
+}
+
+.code-with-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.code-with-img .code-img {
+    max-width: 100%;
+    border: 1px solid #ddd;
+}
+
+body.dark .code-with-img .code-img {
+    border-color: #444;
+}
+
+.cheatsheet-section.full-span {
+    grid-column: 1 / -1;
+}
+
+.code-img {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+body.dark .code-img {
+    border-color: #444;
 }
