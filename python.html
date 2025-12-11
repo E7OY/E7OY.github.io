@@ -161,6 +161,23 @@ while contador < 3:
     print(f"Contador: {contador}")
     contador += 1 <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Incrementa el contador en cada iteración</span></code></pre>
 
+                    <h3>Match/Caso (Match/Case)</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Ejemplo básico con match/case</span>
+def http_error(status):
+    match status:
+        case 400:
+            return "Bad request"
+        case 401 | 403 | 404:
+            return "Not allowed"
+        case 418:
+            return "I'm a teapot"
+        case _:
+            return "Something else"
+
+print(http_error(404)) # Salida: Not allowed
+</code></pre>
+
 
                 </article>
 
@@ -255,6 +272,31 @@ def saludar(nombre):
 
 mensaje = saludar("Eloy")
 print(mensaje)</code></pre>
+                    <h3>Módulo 'random'</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+import random
+
+# Número flotante aleatorio entre 0.0 y 1.0</span>
+print(random.random()) # Ej: 0.12345
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Número entero aleatorio en un rango (excluye el límite superior)</span>
+print(random.randrange(0, 10)) # Ej: 0, 1, ..., 9
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Número entero aleatorio en un rango (incluye ambos límites)</span>
+print(random.randint(0, 10)) # Ej: 0, 1, ..., 10
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Seleccionar un elemento aleatorio de una secuencia</span>
+lista = [1, 2, 3, 4, 5]
+print(random.choice(lista)) # Ej: 3
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Reordenar una secuencia aleatoriamente (shuffle)</span>
+random.shuffle(lista)
+print(lista) # Ej: [2, 5, 1, 4, 3]
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Seleccionar múltiples elementos únicos de una secuencia</span>
+print(random.sample(lista, 2)) # Ej: [1, 4]
+</code></pre>
+
                 </article>
 
                 <!-- Conversiones entre Datos -->
