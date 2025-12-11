@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python Cheatsheet - Guía rápida de Python por Eloy García">
+    <title>Python Cheatsheet | Eloy García</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" type="image/png" href="img/eloy.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        (function () {
+            if (window.__applyDarkPref) return;
+            window.__applyDarkPref = true;
+            function applyPref() {
+                try {
+                    var stored = localStorage.getItem('prefers-dark');
+                    var shouldDark = stored === '1' ? true : (stored === '0' ? false : false);
+                    document.body.classList.toggle('dark', !!shouldDark);
+                } catch (e) {}
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyPref); else applyPref();
+        })();
+    </script>
+</head>
+
+<body class="body-grid cheatsheet-page">
+    <main>
+        <div class="project-container full-width">
+            <!--
+            <nav class="back-nav">
+                <a href="index.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver al portfolio
+                </a>
+            </nav>-->
+
+            <header class="project-hero" style="gap: 1rem; align-items: center; margin-bottom: 0rem; margin-top: -50px;">
+                <div>
+                    <h1 class="project-title" style="font-size: 3rem; margin-bottom: 0rem;">Python Cheatsheet</h1>
+                    <!--<p class="project-subtitle" style="max-width: 600px;">Guía de referencia rápida para los fundamentos de Python, contenedores, NumPy y manejo de excepciones.</p>-->
+                </div>
+                <div class="hero-image" style="max-width: 100px;">
+                    <img src="img/python.png" alt="Python Logo" class="hero-img" style="max-height: 120px; object-fit: contain; filter: brightness(0);">
+                </div>
+            </header>
+
+            <!--
+            <div class="cheatsheet-index">
+                <a href="#introduccion">Introducción</a>
+                <a href="#contenedores">Contenedores</a>
+                <a href="#conversiones">Conversiones entre Datos</a>
+                <a href="#archivos">Manejo de Archivos</a>
+                <a href="#numpy">NumPy</a>
+                <a href="#excepciones">Excepciones</a>
+            </div>
+            -->
+            <div class="cheatsheet-grid">
+                <article id="introduccion" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Introducción y Sintaxis Básica</h1>
+                    <h3>Variables y Tipos de Datos</h3>
+                    <pre><code>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Entero</span>
+edad = 30
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Flotante</span>
+precio = 19.99
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Cadena de texto</span>
+nombre = "Eloy"
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Booleano</span>
+es_activo = True</code></pre>
+
+                    <h3>Condicionales</h3>
+                    <pre><code>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Ejemplo de condicional</span>
+if edad >= 18:
+    print("Es mayor de edad")
+else:
+    print("Es menor de edad")
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Ejemplo de condicional anidado</span>
+if edad >= 18:
+    print("Es mayor de edad")
+else:
+    if edad >= 13:
+        print("Es un adolescente")
+    else:
+        print("Es un niño")
+</code></pre>
+
+                    <h3>F-strings y formato de texto</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Formateo interpolado</span>
+nombre = "Ada"
+edad = 28
+print(f"{nombre} tiene {edad} años.")
+print(f"En dos años tendrá {edad + 2}.")
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Alineación y redondeo</span>
+valor = 3.14159
+print(f"Pi ≈ {valor:.2f}")      <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># 3.14</span>
+print(f"{'OK':-^10}")          <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># ---OK-----</span></code></pre>
+
+                    <h3>Métodos útiles de cadenas</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Limpieza y división</span>
+texto = "  Hola, Python  "
+print(texto.strip())           <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># "Hola, Python"</span>
+print("a,b,c".split(","))      <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># ["a", "b", "c"]</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Unión y reemplazo</span>
+palabras = ["Python", "es", "genial"]
+print(" ".join(palabras))      <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># "Python es genial"</span>
+print("hola mundo".replace("mundo", "chat")) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># "hola chat"</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Mayúsculas / minúsculas</span>
+print("Hola".upper())          <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># "HOLA"</span>
+print("HOLA".lower())          <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># "hola"</span></code></pre>
+
+                    <h3>Bucles (Loops)</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Ejemplo de bucle for simple</span>
+for i in range(5): <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Itera desde 0 hasta 4</span>
+    print(i)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Bucle for con una lista</span>
+frutas = ["manzana", "banana", "cereza"]
+for fruta in frutas:
+    print(fruta)</code></pre>
+
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Ejemplo de bucles for anidados</span>
+for i in range(3): <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Bucle externo: i toma valores 0, 1, 2</span>
+    for j in range(2): <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Bucle interno: j toma valores 0, 1</span>
+        print(f"Coordenada: ({i}, {j})")
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida esperada:</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Coordenada: (0, 0)</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Coordenada: (0, 1)</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Coordenada: (1, 0)</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Coordenada: (1, 1)</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Coordenada: (2, 0)</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Coordenada: (2, 1)</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Otro ejemplo con listas anidadas</span>
+
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for fila in matriz:
+    for elemento in fila:
+        print(elemento, end=" ")
+    print() <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Nueva línea después de cada fila</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida esperada:</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># 1 2 3 </span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># 4 5 6 </span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># 7 8 9 </span></code></pre>
+
+                        <h3>Bucle While</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Ejemplo de bucle while</span>
+contador = 0
+while contador < 3:
+    print(f"Contador: {contador}")
+    contador += 1 <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Incrementa el contador en cada iteración</span></code></pre>
+
+
+                </article>
+
+                <!-- Contenedores -->
+                <article id="contenedores" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Contenedores de Datos</h1>
+                    <h3>Listas (Lists)</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Crear una lista</span>
+mi_lista = [1, 2, 3, 4, 5]
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Acceder a elementos</span>
+print(mi_lista[0])  <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Primer elemento</span>
+print(mi_lista[-1]) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Último elemento</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Slicing</span>
+print(mi_lista[1:4]) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Elementos del índice 1 al 3</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Modificar elementos</span>
+mi_lista[0] = 10
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Añadir elementos</span>
+mi_lista.append(6)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Eliminar elementos</span>
+mi_lista.remove(3)
+</code></pre>
+
+                    <h3>List Comprehensions</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Crear listas en una sola línea</span>
+cuadrados = [n**2 for n in range(5)]          <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># [0, 1, 4, 9, 16]</span>
+pares = [n for n in range(10) if n % 2 == 0]  <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># [0, 2, 4, 6, 8]</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Con condicional dentro</span>
+etiquetas = ["par" if n % 2 == 0 else "impar" for n in range(4)]
+print(etiquetas)</code></pre>
+
+                    <h3>Tuplas (Tuples)</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Crear una tupla</span>
+mi_tupla = (1, 2, 3, 4, 5)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Acceder a elementos (igual que las listas)</span>
+print(mi_tupla[0])
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Las tuplas son inmutables: no se pueden modificar</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># mi_tupla[0] = 10  # Esto daría un error</span></code></pre>
+
+                    <h3>Conjuntos (Sets)</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Crear un conjunto</span>
+mi_conjunto = {1, 2, 3, 4, 5}
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Añadir elementos</span>
+mi_conjunto.add(6)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Eliminar elementos</span>
+mi_conjunto.remove(3)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Operaciones de conjuntos</span>
+conjunto_a = {1, 2, 3}
+conjunto_b = {3, 4, 5}
+print(conjunto_a.union(conjunto_b)) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Unión de conjuntos</span>
+print(conjunto_a.intersection(conjunto_b)) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Intersección de conjuntos</span></code></pre>
+
+                    <h3>Diccionarios (Dictionaries)</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Crear un diccionario</span>
+mi_diccionario = {"nombre": "Eloy", "edad": 30, "ciudad": "A Coruña"}
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Acceder a valores</span>
+mi_diccionario["nombre"] <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Acceder al valor de la clave "nombre"</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Modificar valores</span>
+mi_diccionario["edad"] = 31
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Añadir nuevos pares clave-valor</span>
+mi_diccionario["profesion"] = "Desarrollador"
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Eliminar pares clave-valor</span>
+del mi_diccionario["ciudad"]
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Iterar sobre un diccionario</span>
+for clave, valor in mi_diccionario.items():
+    print(f"{clave}: {valor}")</code></pre>
+                        <h3>Funciones</h3>
+                    <pre><code>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Definir una función</span>
+def saludar(nombre):
+    return f"Hola, {nombre}!"
+
+mensaje = saludar("Eloy")
+print(mensaje)</code></pre>
+                </article>
+
+                <!-- Conversiones entre Datos -->
+                <article id="conversiones" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Conversiones entre Datos</h1>
+                    <h3>Conversión a Entero (int)</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# De flotante a entero (trunca decimales)</span>
+num_float = 3.14
+num_int = int(num_float)
+print(num_int) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: 3</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># De cadena a entero</span>
+str_num = "123"
+num_int_from_str = int(str_num)
+print(num_int_from_str) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: 123</span></code></pre>
+
+                    <h3>Conversión a Flotante (float)</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# De entero a flotante</span>
+num_int = 10
+num_float_from_int = float(num_int)
+print(num_float_from_int) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: 10.0</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># De cadena a flotante</span>
+str_float = "3.14"
+num_float_from_str = float(str_float)
+print(num_float_from_str) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: 3.14</span></code></pre>
+
+                    <h3>Conversión a Cadena (str)</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# De número a cadena</span>
+num = 123
+str_from_num = str(num)
+print(str_from_num) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: "123"</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># De booleano a cadena</span>
+es_verdad = True
+str_from_bool = str(es_verdad)
+print(str_from_bool) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: "True"</span></code></pre>
+
+                    <h3>Conversión a Booleano (bool)</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Números: 0 es False, cualquier otro número es True</span>
+print(bool(0)) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: False</span>
+print(bool(1)) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: True</span>
+print(bool(-5)) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: True</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Cadenas: cadena vacía es False, cualquier otra es True</span>
+print(bool("")) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: False</span>
+print(bool("Hola")) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: True</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Listas, tuplas, diccionarios, conjuntos: vacíos son False, con elementos son True</span>
+print(bool([])) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: False</span>
+print(bool([1, 2])) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Salida: True</span></code></pre>
+                </article>
+
+                <!-- Manejo de Archivos -->
+                <article id="archivos" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Manejo de Archivos</h1>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Abrir y cerrar un archivo de texto (modo lectura 'r')</span>
+file = open("mi_archivo.txt", "r")
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># ... hacer algo con el archivo ...</span>
+file.close()
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Usando 'with' (recomendado: cierra el archivo automáticamente)</span>
+with open("mi_archivo.txt", "w") as f: <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Modo escritura 'w'</span>
+    f.write("Hola, Python!\n")
+    f.write("Este es un archivo de prueba.")</code></pre>
+
+                    <h3>Modos de Apertura</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Modos básicos</span>
+"r"  -> Leer (predeterminado). El archivo debe existir.
+"w"  -> Escribir. Crea el archivo si no existe o lo trunca si ya existe.
+"a"  -> Anexar. Crea el archivo si no existe o añade contenido al final.
+"x"  -> Creación exclusiva. Falla si el archivo ya existe.
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Combinados con lectura y escritura</span>
+"r+" -> Leer y escribir sin truncar.
+"w+" -> Escribir y leer, truncando el archivo al abrir.
+"a+" -> Anexar y leer, manteniendo el contenido previo.
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Sufijos</span>
+"b"  -> Modo binario (ej: "rb" para leer binario).
+"t"  -> Modo texto (predeterminado).</code></pre>
+
+                    <h3>Lectura de Archivos</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Leer todo el contenido</span>
+with open("mi_archivo.txt", "r") as f:
+    contenido = f.read()
+    print(contenido)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Leer línea por línea</span>
+with open("mi_archivo.txt", "r") as f:
+    for linea in f:
+        print(linea.strip()) <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># .strip() elimina saltos de línea y espacios en blanco</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Leer todas las líneas en una lista</span>
+with open("mi_archivo.txt", "r") as f:
+    lineas = f.readlines()
+    print(lineas)</code></pre>
+
+                    <h3>Escritura de Archivos</h3>
+                    <pre><code><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;">
+# Escribir una cadena</span>
+with open("nuevo_archivo.txt", "w") as f:
+    f.write("Primera línea.\n")
+    f.write("Segunda línea.\n")
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Escribir una lista de cadenas</span>
+lista_de_lineas = ["Línea 1\n", "Línea 2\n", "Línea 3\n"]
+with open("otro_archivo.txt", "w") as f:
+    f.writelines(lista_de_lineas)</code></pre>
+                </article>
+
+                <!-- NumPy -->
+                <article id="numpy" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">NumPy</h1>
+                    <h3>Importar NumPy</h3>
+                    <pre><code>
+import numpy as np</code></pre>
+
+                    <h3>Creación de Arrays</h3>
+                    <pre><code>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Desde una lista de Python</span>
+arr1 = np.array([1, 2, 3, 4, 5])
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Array de dos dimensiones</span>
+arr2 = np.array([[1, 2, 3], [4, 5, 6]])
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Arrays con valores iniciales específicos</span>
+ceros = np.zeros((2, 3))  <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Array de 2x3 con ceros</span>
+unos = np.ones((3, 2))  <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Array de 3x2 con unos</span>
+rango = np.arange(0, 10, 2)  <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Array con un rango de valores</span></code></pre>
+                    <h3>Operaciones con Arrays</h3>
+                    <pre><code>
+arr_a</span> = np.array([1, 2, 3])
+arr_b = np.array([4, 5, 6])
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Suma de arrays (elemento a elemento)</span>
+arr_a + arr_b
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Multiplicación por un escalar</span>
+arr_a * 2
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Producto punto</span>
+np.dot(arr_a, arr_b)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Funciones universales (ufuncs)</span>
+np.sqrt(arr_a)
+print(np.sin(arr_b))</code></pre>
+                    <h3>Indexación y Slicing</h3>
+                    <pre><code>
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Acceder a un elemento</span>
+arr[0, 0] <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Fila 0, Columna 0</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Slicing de filas</span>
+arr[0:2, :] <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Primeras dos filas, todas las columnas</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Slicing de columnas</span>
+arr[:, 1:3] <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Todas las filas, columnas 1 y 2</span>
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Indexación booleana</span>
+arr[arr > 5] <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Elementos mayores que 5</span></code></pre>
+                </article>
+
+                <!-- Excepciones -->
+                <article id="excepciones" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Manejo de Excepciones</h1>
+                    <h3>Estructura Básica try-except</h3>
+                    <pre><code>
+try:
+    resultado = 10 / 0
+except ZeroDivisionError:
+    print("¡Error: No se puede dividir por cero!")</code></pre>
+
+                    <h3>Múltiples Bloques except</h3>
+                    <pre><code>
+try:
+    valor = int("abc")
+    lista = [1, 2]
+    print(lista[3])
+except ValueError:
+    print("¡Error: No se pudo convertir a entero!")
+except IndexError:
+    print("¡Error: Índice fuera de rango!")
+except Exception as e:
+    print(f"Ocurrió un error inesperado: {e}")</code></pre>
+
+                    <h3>Bloques else y finally</h3>
+                    <pre><code>
+try:
+    num1 = 10
+    num2 = 2
+    resultado = num1 / num2
+except ZeroDivisionError:
+    print("Error: División por cero.")
+else:
+    print(f"El resultado es: {resultado}")
+finally:
+    print("La ejecución ha finalizado (siempre se ejecuta)."</code></pre>
+
+                    <h3>Lanzar Excepciones Personalizadas (raise)</h3>
+                    <pre><code>
+def verificar_edad(edad):
+    if edad < 0:
+        raise ValueError("La edad no puede ser negativa.")
+    print(f"Edad válida: {edad}")
+
+try:
+    verificar_edad(-5)
+except ValueError as e:
+    print(f"Error: {e}")</code></pre>
+                </article>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

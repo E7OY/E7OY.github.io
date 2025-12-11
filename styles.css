@@ -1420,6 +1420,7 @@ body.dark .design-cheatsheet p {
 .section-title {
     font-size: 22px;
     margin-bottom: 1.5rem;
+    font-weight: 900;
 }
 
 .section-text {
@@ -1824,4 +1825,77 @@ body.dark .code-with-img .code-img {
 
 body.dark .code-img {
     border-color: #444;
+}
+
+/* Jupyter DataFrame Table Styles */
+.dataframe-jupyter {
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9em;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    width: auto;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.dataframe-jupyter thead th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 2px solid #ddd;
+}
+
+.dataframe-jupyter tbody th, .dataframe-jupyter tbody td {
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.dataframe-jupyter tbody th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    text-align: right;
+}
+
+.dataframe-jupyter tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.dataframe-jupyter tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Dark Mode Jupyter Table */
+body.dark .dataframe-jupyter {
+    border-color: #444;
+    box-shadow: none;
+}
+
+body.dark .dataframe-jupyter thead th {
+    background-color: #2a2a2a;
+    border-bottom-color: #555;
+    color: #e0e0e0;
+}
+
+body.dark .dataframe-jupyter tbody th, body.dark .dataframe-jupyter tbody td {
+    border-color: #444;
+}
+
+body.dark .dataframe-jupyter tbody th {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body.dark .dataframe-jupyter tbody tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+body.dark .dataframe-jupyter tbody tr:hover {
+    background-color: #3a3a3a;
+}
+
+.language-bash, .language-python {
+    color: #050505;
+    font-weight: 900;
 }

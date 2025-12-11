@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
     <link rel="icon" type="image/png" href="img/eloy.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hljs-light-theme">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" id="hljs-dark-theme" disabled>
     <script>
         (function () {
             if (window.__applyDarkPref) return;
@@ -30,77 +28,116 @@
 <body class="body-grid cheatsheet-page">
     <main>
         <div class="project-container full-width">
+            <!--
             <nav class="back-nav">
                 <a href="index.html" class="back-link">
                     <i class="fa-solid fa-arrow-left"></i>
                     Volver al portfolio
                 </a>
             </nav>
+            -->
 
-            <header class="project-hero" style="gap: 1rem; align-items: center; margin-bottom: 2rem;">
+            <header class="project-hero" style="gap: 1rem; align-items: center;  margin-bottom: 0rem; margin-top: -50px;">
                 <div>
-                    <h1 class="project-title" style="font-size: 3rem; margin-bottom: 0.5rem;">Pandas Cheatsheet</h1>
-                    <p class="project-subtitle" style="max-width: 600px;">Guía de referencia rápida para la manipulación y análisis de datos con Pandas en Python.</p>
+                    <h1 class="project-title" style="font-size: 3rem; margin-bottom: 0rem;">Pandas Cheatsheet</h1>
                 </div>
                 <div class="hero-image" style="max-width: 120px;">
                     <img src="img/pandaslogo.webp" alt="Pandas Logo" class="hero-img" style="max-height: 120px; object-fit: contain; filter: brightness(0);">
                 </div>
             </header>
 
+            <!--
             <div class="cheatsheet-index">
+                <a href="#df-ejemplo">DataFrame Ejemplo</a>
                 <a href="#instalacion">Instalación</a>
                 <a href="#series">Series</a>
                 <a href="#dataframes">DataFrames</a>
+                <a href="#modificacion">Modificación</a>
                 <a href="#lectura-escritura">Lectura y Escritura</a>
                 <a href="#inspeccion">Inspección</a>
                 <a href="#seleccion">Selección y Filtrado</a>
-                <a href="#modificacion">Modificación</a>
+                <a href="#limpieza">Limpieza de Datos</a>
                 <a href="#operaciones">Operaciones</a>
                 <a href="#graficas">Gráficas</a>
             </div>
+            -->
 
             <div class="cheatsheet-grid">
+                <article id="df-ejemplo" class="project-section general cheatsheet-section full-span">
+                <h1 class="section-title">DataFrame de Ejemplo</h1>
+                <pre><code class="language-python"><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># DataFrame de ejemplo para todas las operaciones</span>
+data = {
+    'Nombre': ['Ana', 'Luis', 'Carlos', 'Marta', 'Lucía', 'Jorge'],
+    'Edad': [28, 34, 29, 42, 31, 25],
+    'Ciudad': ['Madrid', 'Barcelona', 'Madrid', 'Valencia', 'Barcelona', 'Sevilla'],
+    'Puntuacion': [85.5, 90.3, 88.0, 92.1, 86.7, 78.8],
+    'Activo': [True, False, True, True, False, True]
+}
+df = pd.DataFrame(data)
+df</code></pre>
+<!--
+                <table class="dataframe-jupyter">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Ciudad</th>
+                            <th>Puntuacion</th>
+                            <th>Activo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th>0</th><td>Ana</td><td>28</td><td>Madrid</td><td>85.5</td><td>True</td></tr>
+                        <tr><th>1</th><td>Luis</td><td>34</td><td>Barcelona</td><td>90.3</td><td>False</td></tr>
+                        <tr><th>2</th><td>Carlos</td><td>29</td><td>Madrid</td><td>88.0</td><td>True</td></tr>
+                        <tr><th>3</th><td>Marta</td><td>42</td><td>Valencia</td><td>92.1</td><td>True</td></tr>
+                        <tr><th>4</th><td>Lucía</td><td>31</td><td>Barcelona</td><td>86.7</td><td>False</td></tr>
+                        <tr><th>5</th><td>Jorge</td><td>25</td><td>Sevilla</td><td>78.8</td><td>True</td></tr>
+                    </tbody>
+                </table>
+                -->
+            </article>
                 <article id="instalacion" class="project-section general cheatsheet-section">
-                    <h2 class="section-title">Instalación e Importación</h2>
-                    <p class="section-text">Instala e importa las librerías necesarias.</p>
-                    <pre><code class="language-python"># Instalación vía conda
-conda install pandas numpy matplotlib
+                    <h1 class="section-title">Instalación e Importación</h1>
+                    <!--<p class="section-text">Instala e importa las librerías necesarias.</p>-->
+                    <pre><code class="language-python"><span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Instalación vía conda</span>
+%conda install pandas numpy matplotlib
 
-# Importación estándar
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Importación estándar</span>
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt</code></pre>
 
                     <h3>Otras operaciones</h3>
                     <pre><code class="language-python">
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Tipo de dato de una Serie (columna)</span>
+type(df['Puntuacion'])
 
-
-# Tipo de dato
-type(s3)
-
-# Crear una Serie con un rango de números
-numeros = np.arange(1, 10, 1)
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Crear una Serie con un rango de números</span>
+numeros = np.arange(1, 6)
 serie_numeros = pd.Series(numeros, index=numeros)
 
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Operaciones vectorizadas</span>
 cuadrados = serie_numeros ** 2
 cuadrados
 </code></pre>
                 </article>
 
                 <article id="series" class="project-section general cheatsheet-section">
-                    <h2 class="section-title">Series</h2>
-                    <p class="section-text">Array unidimensional etiquetado.</p>
+                    <h1 class="section-title">Series (Array unidimensional etiquetado)</h1>
+                    <!--<p class="section-text">Array unidimensional etiquetado.</p>-->
                     <h3>Crear una Serie</h3>
                     <pre><code class="language-python">
-# A partir de un array de numpy
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># A partir de un array de numpy</span>
 s1 = pd.Series(np.array([1,2,3,4,5,6]))
 
-# Con índices personalizados
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Con índices personalizados</span>
 notas = np.array([5,10,7,8])
 alumnos = np.array(["Estudiante 1","Estudiante 2","Estudiante 3","Estudiante 4"])
 s2 = pd.Series(notas, index=alumnos)
 
-# Desde un diccionario
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Desde un diccionario</span>
 notas_dict = {'Estudiante 1': 5, 'Estudiante 2': 10}
 s3 = pd.Series(notas_dict)</code></pre>
                     <h3>Asignación de valores</h3>
@@ -111,11 +148,11 @@ s3[2:] = 9</code></pre>
                 </article>
 
                 <article id="dataframes" class="project-section general cheatsheet-section">
-                    <h2 class="section-title">DataFrames</h2>
-                    <p class="section-text">Estructura bidimensional similar a una tabla.</p>
+                    <h1 class="section-title">DataFrames (Estructura bidimensional similar a una tabla)</h1>
+                    <!--<p class="section-text">Estructura bidimensional similar a una tabla.</p>-->
                      <h3>Crear un DataFrame</h3>
                     <pre><code class="language-python">
-# Desde un diccionario de Series
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Desde un diccionario de Series</span>
 asignaturas = ['Asignatura 1','Asignatura 2']
 notas = {
     'Estudiante 1': pd.Series([10,2], index=asignaturas),
@@ -123,121 +160,232 @@ notas = {
 }
 df1 = pd.DataFrame(notas)
 
-# Desde un diccionario de listas
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Desde un diccionario de listas</span>
 notas_list = {'María': [10,2,5,6], 'Jose':[9,6,7,4.5]}
 df2 = pd.DataFrame(notas_list)
 df2.index = ['Asignatura 1','Asignatura 2','Asignatura 3','Asignatura 4']</code></pre>
                 </article>
 
+                <article id="modificacion" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Modificación del DataFrame</h1>
+                     <h3>Añadir y Eliminar</h3>
+                    <pre><code class="language-python">
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Añadir una columna</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Parámetros: posición, nombre_columna, datos</span>
+df.insert(2, 'Es_de_Madrid', df['Ciudad'] == 'Madrid')
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Borrar una columna por nombre</span>
+del df['Es_de_Madrid']
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Borrar múltiples columnas</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># inplace=True modifica el DataFrame original</span>
+df.drop(columns=['Puntuacion', 'Activo'], inplace=True)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Eliminar filas por índice</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Parámetros: index=[lista_de_indices]</span>
+df.drop(index=[0, 1], inplace=True)</code></pre>
+                    <h3>Modificar Valores</h3>
+                    <pre><code class="language-python">
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Modificar un valor por etiqueta (.loc)</span>
+df.loc[2, 'Nombre'] = 'Carlos Alberto'
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Aplicar una función a una columna</span>
+df['Puntuacion_100'] = df['Puntuacion'].apply(lambda x: x / 10)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Reemplazar valores específicos de una columna</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Parámetros: valor_a_reemplazar, nuevo_valor</span>
+df['Ciudad'].replace('Madrid', 'Madrid Capital', inplace=True)</code></pre>
+                </article>
+
                 <article id="lectura-escritura" class="project-section general cheatsheet-section">
-                    <h2 class="section-title">Lectura y Escritura</h2>
-                    <p class="section-text">Cargar y guardar datos desde/hacia archivos.</p>
-                    <pre><code class="language-python"># Leer desde un CSV
+                    <h1 class="section-title">Lectura y Escritura</h1>
+                    <!--<p class="section-text">Cargar y guardar datos desde/hacia archivos.</p>-->
+                    <h3>Operaciones de Entrada/Salida</h3>
+                    <pre><code class="language-python">
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Leer desde un CSV</span>
 df = pd.read_csv("data/FuelConsumption.csv")
 
-# Leer CSV con parámetros
-# df_custom = pd.read_csv("data.csv", sep=';', header=1)
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Leer CSV con parámetros</span>
+df_custom = pd.read_csv("data.csv", sep=';', header=1)
 
-# Escribir a un CSV
-df.to_csv('nuevo.csv', index=False)</code></pre>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Escribir a un CSV</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># index=False evita guardar el índice del DataFrame como una columna</span>
+df.to_csv('nuevo.csv', index=False)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Leer CSV especificando columnas y tipos</span>
+df_optimizado = pd.read_csv("retribuciones_alcaldes_2021.csv", names=['AYUNTAMIENTO', 'TOTAL PERCIBIDO'], dtype={'TOTAL PERCIBIDO': float}, decimal=',', thousands='.')
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Leer EXCEL</span>
+df_excel = pd.read_excel("fichero.xlsx")
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Leer EXCEL con parámetros de hoja, cabecera, columnas y filas a saltar</span>
+df_excel = pd.read_excel("fichero.xlsx", sheet_name=nombreHoja, names=cabecera, usecols=columna, skiprows=fila)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Escribir a EXCEL</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># index=False evita guardar el índice del DataFrame como una columna</span>
+df.to_excel('nuevo.xlsx', index=False)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Escribir a JSON</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># orient='records' para formato lista de registros, indent=4 para legibilidad</span>
+df.to_json('nuevo.json', orient='records', indent=4)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Escribir a XML (requiere lxml)</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># %conda install lxml</span>
+df.to_xml('nuevo.xml')
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Escribir a Parquet (requiere pyarrow o fastparquet)</span>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># %conda install pyarrow fastparquet</span>
+df.to_parquet('nuevo.parquet')
+
+</code></pre>
                 </article>
 
                 <article id="inspeccion" class="project-section general cheatsheet-section">
-                    <h2 class="section-title">Inspección de Datos</h2>
-                    <p class="section-text">Funciones para una visión general del DataFrame.</p>
-                    <pre><code class="language-bash">df.info()          # Resumen del conjunto (tipos, nulos)
-df.head()          # Muestra las primeras 5 filas
-df.shape           # Dimensiones del conjunto (filas, columnas)
-df.keys()          # Obtiene los nombres de las columnas o claves del df
-df.dtypes          # Tipos de datos de cada columna
-df.nunique()       # Número de valores únicos (distintos) por columna</code></pre>
-                </article>
-
-                <article id="seleccion" class="project-section general cheatsheet-section">
-                    <h2 class="section-title">Selección y Filtrado</h2>
-                    <p class="section-text">Acceder a subconjuntos de datos.</p>
+                    <h1 class="section-title">Inspección de Datos</h1>
+                    <!--<p class="section-text">Funciones para una visión general del DataFrame.</p>-->
+                    <h3>Métodos de Inspección</h3>
+                    <pre><code class="language-bash">
+df.info()          <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Resumen del conjunto (tipos, nulos)</span>
+df.head()          <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Muestra las primeras 5 filas</span>
+df.tail()          <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Muestra las últimas 5 filas</span>
+df.describe()      <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Resumen estadístico de columnas numéricas</span>
+df.shape           <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Dimensiones del conjunto (filas, columnas)</span>
+df.keys()          <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Obtiene los nombres de las columnas o claves del df</span>
+df.dtypes          <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Tipos de datos de cada columna</span>
+df.nunique()       <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Número de valores únicos (distintos) por columna</span></code></pre>
+<article id="seleccion" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Selección y Filtrado</h1>
+                    <!---<p class="section-text">Acceder a subconjuntos de datos.</p>-->
                     <h3>Selección</h3>
                     <pre><code class="language-python">
-# Acceder a un elemento
-df.iloc[0,2] # Por posición
-df.at[2,'ENGINESIZE'] # Por etiqueta
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Acceder a un elemento</span>
+df.iloc[0,2] <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Por posición (Fila 0, Columna 2)</span>
+df.at[2,'Ciudad'] <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Por etiqueta (Fila con índice 2, Columna 'Ciudad')</span>
 
-# Seleccionar columnas
-df['ENGINESIZE'] # Como Serie
-df[['ENGINESIZE','CO2EMISSIONS']] # Como DataFrame</code></pre>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Seleccionar columnas</span>
+df['Puntuacion'] <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Como Serie</span>
+df[['Nombre','Puntuacion']] <span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Como DataFrame</span></code></pre>
                     <h3>Filtrado</h3>
                     <pre><code class="language-python">
-# Filtrado condicional
-df_filtrado = df[df['CYLINDERS'] > 6]
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Filtrado condicional</span>
+df_filtrado = df[df['Edad'] > 30]
 
-# Múltiples condiciones
-df_multi = df[(df['CYLINDERS'] > 6) & (df['MAKE'] == 'BENTLEY')]</code></pre>
-                </article>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Múltiples condiciones</span>
+df_multi = df[(df['Edad'] > 30) & (df['Activo'] == True)]</code></pre>
+                </article>                
+</article>
 
-                <article id="modificacion" class="project-section general cheatsheet-section">
-                    <h2 class="section-title">Modificación del DataFrame</h2>
-                     <p class="section-text">Añadir o eliminar columnas.</p>
-                    <pre><code class="language-python"># Añadir una columna
-df.insert(1, 'ES_FORD', df['MAKE'] == 'FORD')
+                
+                <article id="limpieza" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Limpieza de Datos</h1>
+                    <!--<p class="section-text">Técnicas comunes para la limpieza y preparación de datos.</p>-->
+                    <h3>Nulos, Duplicados y Renombrado</h3>
+                    <pre><code class="language-python">
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Contar valores nulos por columna</span>
+df.isnull().sum()
 
-# Borrar una columna
-del df['ES_FORD']</code></pre>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Eliminar filas con valores nulos</span>
+df.dropna(inplace=True)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Eliminar filas duplicadas</span>
+df.drop_duplicates(inplace=True)
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Renombrar columnas</span>
+df.rename(columns={'old_name': 'new_name'}, inplace=True)</code></pre>
+                    <h3>Concatenar y Contar</h3>
+                    <pre><code class="language-python">
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Concatenar DataFrames</span>
+df_concatenado = pd.concat([df1, df2])
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Conteo de valores (útil para encontrar inconsistencias)</span>
+df['Ciudad'].value_counts()</code></pre>
                 </article>
 
                 <article id="operaciones" class="project-section general cheatsheet-section">
-                    <h2 class="section-title">Operaciones y Agregaciones</h2>
-                    <p class="section-text">Calcular estadísticas y agrupar datos.</p>
+                    <h1 class="section-title">Operaciones y Agregaciones</h1>
+                    <!--<p class="section-text">Calcular estadísticas y agrupar datos.</p>-->
+                    <h3>Operaciones Comunes</h3>
                     <pre><code class="language-python">
-# Media de la Serie
-s3.mean()
-# o
-np.mean(s3)
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Media de una columna</span>
+df['Edad'].mean()
 
-# Conteo de valores
-df['MAKE'].value_counts()
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Suma de una columna</span>
+df['Puntuacion'].sum()
 
-# Agrupación (Group By)
-df.groupby('MAKE')['CO2EMISSIONS'].mean()</code></pre>
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Conteo de valores</span>
+df['Ciudad'].value_counts()
+
+<span style="color: rgb(112, 80, 42); font-family: inherit; font-weight: 600;"># Agrupación (Group By)</span>
+df.groupby('Ciudad')['Puntuacion'].mean()</code></pre>
                 </article>
 
-                <article id="graficas" class="project-section general cheatsheet-section full-span">
-                    <h2 class="section-title">Gráficas</h2>
-                    <p class="section-text">Visualización rápida de datos.</p>
+                <article id="graficas" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Gráficas</h1>
+                    <!--<p class="section-text">Visualización rápida de datos.</p>-->
+                    <h3>Parámetros Comunes de Gráficas</h3>
+                    <!--<p class="section-text">La función <code>df.plot()</code> acepta numerosos parámetros para personalizar las gráficas. Aquí están algunos de los más comunes:</p>-->
+                    <pre>
+                        <code>
+kind: Tipo de gráfica. Valores comunes: <code>'line'</code>, <code>'bar'</code>, <code>'barh'</code>, <code>'hist'</code>, <code>'box'</code>, <code>'kde'</code>, <code>'density'</code>, <code>'area'</code>, <code>'pie'</code>, <code>'scatter'</code>, <code>'hexbin'</code>.</li>
+
+x</code>, <code>y</code></strong>: Nombres de las columnas para los ejes X e Y.</li>
+
+title</code></strong>: Título de la gráfica.</li>
+
+xlabel</code>, <code>ylabel</code></strong>: Etiquetas para los ejes X e Y.</li>
+
+color</code></strong>: Especifica el color de los elementos de la gráfica.</li>
+
+figsize</code></strong>: Tupla (ancho, alto) en pulgadas para el tamaño de la figura.</li>
+
+grid</code></strong>: Booleano para mostrar una rejilla (<code>True</code>/<code>False</code>).</li>
+
+legend</code></strong>: Booleano para mostrar (<code>True</code>) u ocultar (<code>False</code>) la leyenda.</li>
+
+subplots</code></strong>: Booleano para crear subplots por columna.</li>
+
+layout</code></strong>: Tupla para la disposición de los subplots (filas, columnas).</li>
+
+rot</code></strong>: Rotación de las etiquetas del eje X en grados.</li>
+
+fontsize</code></strong>: Tamaño de la fuente para las etiquetas de los ejes.</li>
+                    </code>
+                    </pre>
                 </article>
 
                 <article class="project-section general cheatsheet-section">
                     <h3>Gráfica de Puntos (Scatter)</h3>
                     <pre><code>
-df[0:100].plot(
+df.plot(
     kind='scatter', 
-    x='FUELCONSUMPTION_HWY', 
-    y='CO2EMISSIONS', 
+    x='Edad', 
+    y='Puntuacion', 
     color='DarkBlue',
-    figsize=(20,5)
+    figsize=(10,5)
 )
-plt.show()</code></pre>
-                </article>
-                <article class="project-section general cheatsheet-section">
-                    <h3>Resultado</h3>
-                    <img src="img/grafica-scatter.png" alt="Ejemplo de gráfica de puntos" class="code-img">
-                </article>
+plt.show()
+<img src="img/grafica-scatter.png" alt="Ejemplo de gráfica de puntos" class="code-img">
+</code></pre>
 
-                <article class="project-section general cheatsheet-section">
+
+
+<article class="project-section general cheatsheet-section">
                     <h3>Gráfica de Barras</h3>
                     <pre><code>
-df[0:50].plot(
+df.plot(
     kind='bar', 
-    x='FUELCONSUMPTION_HWY', 
-    y='CO2EMISSIONS', 
+    x='Nombre', 
+    y='Puntuacion', 
     color='Orange',
-    figsize=(20,5)
+    figsize=(10,5)
 )
-plt.show()</code></pre>
+plt.show()
+<img src="img/grafica-barras.png" alt="Ejemplo de gráfica de barras" class="code-img">
+</code></pre>
                 </article>
-                <article class="project-section general cheatsheet-section">
-                    <h3>Resultado</h3>
-                    <img src="img/grafica-barras.png" alt="Ejemplo de gráfica de barras" class="code-img">
                 </article>
+
+                
             </div>
         </div>
     </main>

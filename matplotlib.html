@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matplotlib Cheatsheet - Guía rápida de Matplotlib por Eloy García">
+    <title>Matplotlib Cheatsheet | Eloy García</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" type="image/png" href="img/eloy.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        (function () {
+            if (window.__applyDarkPref) return;
+            window.__applyDarkPref = true;
+            function applyPref() {
+                try {
+                    var stored = localStorage.getItem('prefers-dark');
+                    var shouldDark = stored === '1' ? true : (stored === '0' ? false : false);
+                    document.body.classList.toggle('dark', !!shouldDark);
+                } catch (e) {}
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyPref); else applyPref();
+        })();
+    </script>
+</head>
+
+<body class="body-grid cheatsheet-page">
+    <main>
+        <div class="project-container full-width">
+            <!--
+            <nav class="back-nav">
+                <a href="index.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver al portfolio
+                </a>
+            </nav>-->
+
+            <header class="project-hero" style="gap: 1rem; align-items: center; margin-bottom: 0rem; margin-top: -50px;">
+                <div>
+                    <h1 class="project-title" style="font-size: 3rem; margin-bottom: 0rem;">Matplotlib Cheatsheet</h1>
+                    <!--<p class="project-subtitle" style="max-width: 600px;">Guía de referencia rápida para la visualización de datos con Matplotlib.</p>-->
+                </div>
+                <div class="hero-image" style="max-width: 100px;">
+                    <img src="img/matplotliblogo.webp" alt="Matplotlib Logo" class="hero-img" style="max-height: 120px; object-fit: contain;">
+                </div>
+            </header>
+
+            <div class="cheatsheet-grid">
+                <article id="introduccion" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Introducción y Configuración Básica</h1>
+                    <h3>Importar Matplotlib y Alias</h3>
+                    <pre><code>
+import matplotlib.pyplot as plt
+import numpy as np
+</code></pre>
+
+                    <h3>Configuración de Figuras y Ejes</h3>
+                    <pre><code>
+fig, ax = plt.subplots(figsize=(10, 6))
+# ... código de trazado ...
+plt.show()
+</code></pre>
+
+                    <h3>Guardar Gráficas</h3>
+                    <pre><code>
+plt.savefig('mi_grafica.png')
+</code></pre>
+                </article>
+
+                <article id="tipos-de-graficas" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Tipos de Gráficas Comunes</h1>
+                    <h3>Gráfica de Líneas</h3>
+                    <pre><code>
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+plt.plot(x, y)
+plt.title("Gráfica de Seno")
+plt.xlabel("Eje X")
+plt.ylabel("Eje Y")
+plt.grid(True)
+plt.show()
+</code></pre>
+
+                    <h3>Gráfica de Dispersión (Scatter Plot)</h3>
+                    <pre><code>
+x = np.random.rand(50)
+y = np.random.rand(50)
+plt.scatter(x, y)
+plt.title("Gráfica de Dispersión")
+plt.xlabel("Eje X")
+plt.ylabel("Eje Y")
+plt.show()
+</code></pre>
+
+                    <h3>Histograma</h3>
+                    <pre><code>
+data = np.random.randn(1000)
+plt.hist(data, bins=30)
+plt.title("Histograma")
+plt.xlabel("Valor")
+plt.ylabel("Frecuencia")
+plt.show()
+</code></pre>
+
+                    <h3>Gráfica de Barras</h3>
+                    <pre><code>
+categorias = ['A', 'B', 'C', 'D']
+valores = [23, 56, 12, 49]
+plt.bar(categorias, valores)
+plt.title("Gráfica de Barras")
+plt.xlabel("Categoría")
+plt.ylabel("Valor")
+plt.show()
+</code></pre>
+
+                    <h3>Gráfica de Pastel (Pie Chart)</h3>
+                    <pre><code>
+tamanos = [15, 30, 45, 10]
+etiquetas = ['Manzanas', 'Naranjas', 'Bananas', 'Uvas']
+plt.pie(tamanos, labels=etiquetas, autopct='%1.1f%%', startangle=90)
+plt.title("Gráfica de Pastel")
+plt.axis('equal') # Asegura que el pastel sea circular
+plt.show()
+</code></pre>
+                </article>
+
+                <article id="personalizacion" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Personalización de Gráficas</h1>
+                    <h3>Estilos y Colores</h3>
+                    <pre><code>
+plt.style.use('seaborn-v0_8-darkgrid')
+plt.plot([1, 2, 3], [4, 5, 6], color='red', linestyle='--', marker='o')
+plt.show()
+</code></pre>
+
+                    <h3>Añadir Títulos y Etiquetas</h3>
+                    <pre><code>
+plt.title("Mi Título")
+plt.xlabel("Etiqueta X")
+plt.ylabel("Etiqueta Y")
+plt.show()
+</code></pre>
+
+                    <h3>Leyendas</h3>
+                    <pre><code>
+plt.plot([1, 2], label='Línea 1')
+plt.plot([2, 1], label='Línea 2')
+plt.legend()
+plt.show()
+</code></pre>
+
+                    <h3>Anotaciones y Texto</h3>
+                    <pre><code>
+plt.plot(3, 4, 'ro')
+plt.annotate('Punto Interesante', xy=(3, 4), xytext=(4, 5), arrowprops=dict(facecolor='black', shrink=0.05))
+plt.show()
+</code></pre>
+                </article>
+
+                <article id="multiples-graficas" class="project-section general cheatsheet-section">
+                    <h1 class="section-title">Múltiples Gráficas y Subplots</h1>
+                    <h3>Subplots Básicos</h3>
+                    <pre><code>
+fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+axes[0].plot([1, 2, 3])
+axes[0].set_title("Primer Subplot")
+axes[1].scatter([1, 2, 3], [3, 2, 1])
+axes[1].set_title("Segundo Subplot")
+plt.tight_layout()
+plt.show()
+</code></pre>
+
+                    <h3>Subplots con Gridspec</h3>
+                    <pre><code>
+import matplotlib.gridspec as gridspec
+
+fig = plt.figure(figsize=(10, 8))
+gs = gridspec.GridSpec(2, 2)
+
+ax1 = fig.add_subplot(gs[0, :])
+ax1.plot(np.random.rand(10))
+ax1.set_title("Gráfica Superior")
+
+ax2 = fig.add_subplot(gs[1, 0])
+ax2.hist(np.random.randn(100))
+ax2.set_title("Histograma Inferior Izquierdo")
+
+ax3 = fig.add_subplot(gs[1, 1])
+ax3.scatter(np.random.rand(20), np.random.rand(20))
+ax3.set_title("Dispersión Inferior Derecho")
+
+plt.tight_layout()
+plt.show()
+</code></pre>
+                </article>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const pre = button.parentElement;
+                const code = pre.querySelector('code');
+                const text = code.innerText;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    button.textContent = 'Copiado!';
+                    button.classList.add('copied');
+                    setTimeout(() => {
+                        button.textContent = 'Copiar';
+                        button.classList.remove('copied');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Error al copiar el texto: ', err);
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const pre = button.parentElement;
+                const code = pre.querySelector('code');
+                const text = code.innerText;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    button.textContent = 'Copiado!';
+                    button.classList.add('copied');
+                    setTimeout(() => {
+                        button.textContent = 'Copiar';
+                        button.classList.remove('copied');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Error al copiar el texto: ', err);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
