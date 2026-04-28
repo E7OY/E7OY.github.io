@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clasificador de riesgo de ataque al corazón con stacking de modelos y ajuste de hiperparámetros.">
+    <title>Heart Attack Classifier - Proyecto IA | Eloy García</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" type="image/png" href="img/eloy.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        (function () {
+            if (window.__applyDarkPref) return;
+            window.__applyDarkPref = true;
+            function applyPref() {
+                try {
+                    var stored = localStorage.getItem('prefers-dark');
+                    var shouldDark = stored === '1' ? true : (stored === '0' ? false : false);
+                    document.body.classList.toggle('dark', !!shouldDark);
+                } catch (e) {}
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyPref); else applyPref();
+        })();
+    </script>
+</head>
+
+<body class="body-grid">
+    <main>
+        <div class="project-container">
+            <nav class="back-nav">
+                <a href="index.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver al portfolio
+                </a>
+            </nav>
+
+            <header class="project-hero">
+                <div>
+                    <h1 class="project-title">Heart Attack Classifier</h1>
+                    <p class="project-subtitle">Clasificador de riesgo de infarto con stacking de modelos, GridSearchCV e interfaz con ipywidgets.</p>
+                </div>
+
+                <div class="project-actions">
+                    <a href="img/heart-attack.ipynb" download class="btn-project btn-primary">
+                        <i class="fa-solid fa-download"></i>
+                        Descargar notebook
+                    </a>
+                </div>
+            </header>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Mi Rol</div>
+                    <div class="meta-value">Data Scientist</div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Equipo</div>
+                    <div class="meta-value">Eloy García Martínez (yo)</div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Tecnologías</div>
+                    <div class="tech-list">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">scikit-learn</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">Seaborn</span>
+                        <span class="tech-item">ipywidgets</span>
+                        <span class="tech-item">Jupyter</span>
+                    </div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Timeline</div>
+                    <div class="meta-value">2026</div>
+                </div>
+            </div>
+
+            <article class="project-section general">
+                <h2 class="section-title">Contexto</h2>
+                <p class="section-text">
+                    Este ejercicio parte del dataset <strong>heart.csv</strong> con variables clínicas como edad,
+                    presión arterial en reposo, colesterol, frecuencia cardíaca máxima, dolor torácico y otras
+                    señales relevantes para evaluar riesgo cardiovascular.
+                </p>
+                <p class="section-text">
+                    El objetivo es construir un clasificador binario que prediga si una persona está en riesgo de
+                    sufrir un ataque al corazón (<strong>output = 1</strong>) o no (<strong>output = 0</strong>),
+                    priorizando una buena capacidad de detección de casos positivos.
+                </p>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Qué se hace en el notebook</h2>
+                <ul class="features-list">
+                    <li>Importación y exploración inicial del dataset con Pandas y visualización de correlaciones con heatmap de Seaborn.</li>
+                    <li>Separación en entrenamiento y test, y preprocesado con un pipeline de imputación de media + estandarización.</li>
+                    <li>Entrenamiento individual de tres modelos: Random Forest, SVM y Regresión Logística.</li>
+                    <li>Comparación de rendimiento con accuracy y recall (TPR) para valorar calidad global y sensibilidad.</li>
+                    <li>Construcción de un modelo de ensemble mediante <strong>StackingClassifier</strong>.</li>
+                    <li>Tuning de hiperparámetros con <strong>GridSearchCV</strong> para optimizar el pipeline final.</li>
+                    <li>Creación de una interfaz con <strong>ipywidgets</strong> para introducir variables del paciente y obtener predicción + probabilidad.</li>
+                </ul>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Modelado y selección</h2>
+                <p class="section-text">
+                    En la comparación inicial, el modelo SVM destaca con un accuracy aproximado del 86.89%,
+                    mostrando una separación sólida entre pacientes de bajo y alto riesgo en este dataset.
+                </p>
+                <p class="section-text">
+                    Después se integra un stacking con los tres modelos base para combinar sus fortalezas.
+                    El ajuste de hiperparámetros se aplica sobre Random Forest, SVM y meta-modelo logístico
+                    para buscar una configuración más robusta.
+                </p>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Conclusiones</h2>
+                <ul class="features-list">
+                    <li>El enfoque combinado (preprocesado + tuning + ensemble) mejora la capacidad predictiva frente al uso de un único modelo sin ajustar.</li>
+                    <li>Se alcanza una puntuación superior a 0.88 en test tras la búsqueda de hiperparámetros, resultado sólido para un ejercicio académico.</li>
+                    <li>La métrica de recall es clave en salud: detectar positivos es más importante que maximizar solo accuracy.</li>
+                    <li>La interfaz con ipywidgets convierte el notebook en una mini herramienta interactiva útil para demos y validación rápida.</li>
+                </ul>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Nota</h2>
+                <p class="section-text">
+                    Este ejercicio es de carácter formativo. El modelo no sustituye evaluación clínica profesional ni
+                    está validado para uso médico real.
+                </p>
+                <p class="section-text" style="margin-top:-10px">
+                    © 2026 Eloy García Martínez.
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            if (window.__injectedDarkSwitch) return;
+            window.__injectedDarkSwitch = true;
+
+            const css = `
+  .injected-apple-switch{position:fixed;right:18px;top:20px;width:52px;height:30px;border-radius:999px;background:#18181B;border:1px solid #fff;padding:3px;display:inline-flex;align-items:center;cursor:pointer;z-index:9999;transition:background .22s ease}
+  .injected-apple-switch .knob{width:24px;height:24px;background:#fff;border-radius:50%;transform:translateX(0);transition:transform .22s cubic-bezier(.2,.9,.3,1);box-shadow:0 4px 10px rgba(0,0,0,.18)}
+  .injected-apple-switch.active{background: #fff; border:1px solid #000}
+  .injected-apple-switch.active .knob{background:#000;transform:translateX(22px)}
+  .injected-apple-switch:focus{outline:3px solid rgba(100,150,255,.18);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){.injected-apple-switch,.injected-apple-switch .knob{transition:none}}
+  `;
+
+            const style = document.createElement('style');
+            style.setAttribute('data-injected', 'dark-switch-styles');
+            style.appendChild(document.createTextNode(css));
+            document.head.appendChild(style);
+
+            function createButton() {
+                const btn = document.createElement('button');
+                btn.id = 'injected-apple-switch';
+                btn.className = 'injected-apple-switch';
+                btn.type = 'button';
+                btn.setAttribute('aria-label', 'Alternar modo oscuro');
+                btn.setAttribute('aria-pressed', 'false');
+                btn.title = 'Alternar modo oscuro';
+                btn.innerHTML = '<span class="knob" aria-hidden="true"></span>';
+
+                function setState(on, save) {
+                    document.body.classList.toggle('dark', !!on);
+                    btn.classList.toggle('active', !on);
+                    btn.setAttribute('aria-pressed', !!on ? 'true' : 'false');
+                    if (save) localStorage.setItem('prefers-dark', !!on ? '1' : '0');
+                }
+
+                function toggle() {
+                    setState(!document.body.classList.contains('dark'), true);
+                }
+
+                btn.addEventListener('click', toggle);
+                btn.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+                });
+
+                document.body.appendChild(btn);
+
+                const stored = localStorage.getItem('prefers-dark');
+                const initial = stored === '1' ? true : false;
+                setState(initial, false);
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', createButton); else createButton();
+        })();
+    </script>
+
+</body>
+
+</html>

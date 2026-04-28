@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="InmoSpec - Analisis del precio de la vivienda en Espana con Pandas, Selenium, Spark y Power BI">
+    <title>InmoSpec - Proyecto | Eloy Garcia</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" type="image/png" href="img/eloy.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        (function () {
+            if (window.__applyDarkPref) return;
+            window.__applyDarkPref = true;
+            function applyPref() {
+                try {
+                    var stored = localStorage.getItem('prefers-dark');
+                    var shouldDark = stored === '1' ? true : (stored === '0' ? false : false);
+                    document.body.classList.toggle('dark', !!shouldDark);
+                } catch (e) {}
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyPref); else applyPref();
+        })();
+    </script>
+</head>
+
+<body class="body-grid">
+    <main>
+        <div class="project-container">
+            <nav class="back-nav">
+                <a href="index.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver al portfolio
+                </a>
+            </nav>
+
+            <header class="project-hero">
+                <div>
+                    <div class="hero-image">
+                        <img src="img/inmospec.png" alt="Mapa de calor del precio de vivienda en Espana" class="hero-img">
+                    </div>
+                    <p class="project-subtitle">Analisis de precios de vivienda en Espana con pipeline de datos completo en AWS.</p>
+                </div>
+
+                <div class="project-actions">
+                    <a href="https://app.powerbi.com/links/QrLqpbcMVN?ctid=531a8198-7b9d-4bfa-a650-4dde98b8bf42&pbi_source=linkShare"
+                        target="_blank" rel="noopener noreferrer" class="btn-project btn-powerbi">
+                        <i class="fa-solid fa-chart-column"></i>
+                        Ver informe Power BI
+                    </a>
+                </div>
+            </header>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Mi Rol</div>
+                    <div class="meta-value">Data Engineer / Data Analyst</div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Equipo</div>
+                    <div class="meta-value">Eloy Garcia Martinez (yo)</div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Tecnologias</div>
+                    <div class="tech-list">
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">Selenium</span>
+                        <span class="tech-item">Apache Spark</span>
+                        <span class="tech-item">HDFS</span>
+                        <span class="tech-item">Hadoop</span>
+                        <span class="tech-item">AWS EC2</span>
+                        <span class="tech-item">Power BI</span>
+                    </div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Timeline</div>
+                    <div class="meta-value">2026</div>
+                </div>
+            </div>
+
+            <article class="project-section general">
+                <h2 class="section-title">Contexto</h2>
+                <p class="section-text">
+                    InmoSpec es un proyecto de analisis de datos inmobiliarios orientado a estudiar la evolucion del precio
+                    de la vivienda en Espana y detectar patrones geograficos y tendencias del mercado.
+                </p>
+                <p class="section-text">
+                    El flujo comienza con scraping de anuncios de Fotocasa mediante Selenium, continua con limpieza y
+                    transformacion de datos en Pandas, y escala el procesamiento con Spark sobre una arquitectura Hadoop
+                    con HDFS desplegada en una instancia AWS EC2.
+                </p>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Pipeline de datos</h2>
+                <ul class="features-list">
+                    <li>Extraccion automatizada de datos de Fotocasa con Selenium.</li>
+                    <li>Limpieza, normalizacion y enriquecimiento del dataset con Pandas.</li>
+                    <li>Procesamiento distribuido con Apache Spark para agregaciones y calculos intensivos.</li>
+                    <li>Persistencia de datos en HDFS dentro de un entorno Hadoop.</li>
+                    <li>Ejecucion integral en una maquina AWS EC2 para centralizar el flujo end-to-end.</li>
+                    <li>Construccion de informes y visualizaciones interactivas en Power BI.</li>
+                </ul>
+            </article>
+
+            <!--
+            <article class="project-section general">
+                <h2 class="section-title">Capturas del proyecto</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-wrapper">
+                        <div class="zoom-prompt"><img src="img/arrow.svg" alt="flecha">Pincha para ampliarme</div>
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/mapa.png" alt="Mapa de precios por zona" class="zoomable" data-full="img/mapa.png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Mapa de precios</h3>
+                                <p class="screenshot-description">Visualizacion territorial del comportamiento del precio de vivienda.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-wrapper">
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/top.png" alt="Comparativa por ciudades" class="zoomable" data-full="img/grafica-barras.png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Comparativa por ciudades</h3>
+                                <p class="screenshot-description">Analisis comparativo de precio medio por ubicacion.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--
+                    <div class="screenshot-wrapper">
+                        <div class="screenshot-item">
+                            <div class="screenshot-placeholder">
+                                <img src="img/grafica-scatter.png" alt="Relacion entre variables" class="zoomable" data-full="img/grafica-scatter.png">
+                            </div>
+                            <div class="screenshot-content">
+                                <h3 class="screenshot-title">Relacion entre variables</h3>
+                                <p class="screenshot-description">Distribucion y correlaciones para interpretar dinamicas del mercado.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            -->
+
+            <article class="project-section general" id="informe-powerbi">
+                <h2 class="section-title">Informe completo</h2>
+                <div class="screenshot-wrapper">
+                    <div class="screenshot-item report-embed-card">
+                        <div class="screenshot-placeholder">
+                            <iframe
+                                title="Informe completo de InmoSpec en Power BI"
+                                src="https://app.powerbi.com/reportEmbed?reportId=0e752f7e-bac2-4cf3-820c-21dc279af916&autoAuth=true&ctid=531a8198-7b9d-4bfa-a650-4dde98b8bf42"
+                                width="100%"
+                                height="620"
+                                style="border: 0; background: #fff;"
+                                loading="lazy"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Acceso directo a Power BI</h3>
+                            <p class="screenshot-description">Informe incrustado en la pagina. Si no carga por permisos del tenant, puedes abrirlo en una <a href="https://app.powerbi.com/links/QrLqpbcMVN?ctid=531a8198-7b9d-4bfa-a650-4dde98b8bf42&pbi_source=linkShare">pestaña nueva.</a> </p>
+                            <div class="project-actions" style="min-width: auto; margin-top: 8px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-section general" id="resultados">
+                <h2 class="section-title">Resultados</h2>
+                <ul class="features-list">
+                    <li>Identificacion de zonas con mayor tension de precios y mayor volatilidad.</li>
+                    <li>Deteccion de patrones entre superficie, ubicacion y rango de precios.</li>
+                    <li>Generacion de informes claros en Power BI para facilitar la toma de decisiones.</li>
+                </ul>
+            </article>
+
+            <article class="project-section general" id="licencia-creditos">
+                <h2 class="section-title">Licencia y creditos</h2>
+                <p class="section-text">
+                    Datos extraidos para fines academicos y de investigacion. Recursos visuales y logotipos pertenecen a
+                    sus respectivos propietarios.
+                </p>
+                <p class="section-text" style="margin-top:-10px">
+                    © 2026 Eloy Garcia Martinez.
+                </p>
+            </article>
+
+            <div id="imageModal" class="image-modal" aria-hidden="true" role="dialog" aria-label="Imagen ampliada">
+                <div class="image-modal-content">
+                    <button class="image-modal-close" aria-label="Cerrar imagen">&times;</button>
+                    <img src="" alt="" class="image-modal-img">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const modal = document.getElementById('imageModal');
+            const modalImg = modal.querySelector('.image-modal-img');
+            const closeBtn = modal.querySelector('.image-modal-close');
+            const zoomables = document.querySelectorAll('img.zoomable');
+
+            function openModal(src, alt) {
+                modalImg.src = src;
+                modalImg.alt = alt || '';
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+                modalImg.src = '';
+                document.body.style.overflow = '';
+            }
+
+            zoomables.forEach(img => {
+                img.addEventListener('click', () => {
+                    const full = img.dataset.full || img.src;
+                    openModal(full, img.alt);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+            });
+        })();
+    </script>
+</body>
+
+</html>

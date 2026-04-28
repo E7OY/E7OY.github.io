@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Predicción de edad de zarigüeyas con Random Forest - Proyecto de Machine Learning por Eloy García">
+    <title>Possum Regression - Proyecto ML | Eloy García</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" type="image/png" href="img/eloy.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        (function () {
+            if (window.__applyDarkPref) return;
+            window.__applyDarkPref = true;
+            function applyPref() {
+                try {
+                    var stored = localStorage.getItem('prefers-dark');
+                    var shouldDark = stored === '1' ? true : (stored === '0' ? false : false);
+                    document.body.classList.toggle('dark', !!shouldDark);
+                } catch (e) {}
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyPref); else applyPref();
+        })();
+    </script>
+</head>
+
+<body class="body-grid">
+    <main>
+        <div class="project-container">
+            <nav class="back-nav">
+                <a href="index.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver al portfolio
+                </a>
+            </nav>
+
+            <header class="project-hero">
+                <div>
+                    <h1 class="project-title">Possum Regression</h1>
+                    <p class="project-subtitle">Predicción de la edad de zarigüeyas mediante Random Forest con tuning de hiperparámetros.</p>
+                </div>
+
+                <div class="project-actions">
+                    <a href="img/possum-regression.ipynb" download class="btn-project btn-primary">
+                        <i class="fa-solid fa-download"></i>
+                        Descargar notebook
+                    </a>
+                    <a href="https://www.kaggle.com/datasets/abrambeyer/openintro-possum"
+                        target="_blank" rel="noopener noreferrer" class="btn-project btn-tertiary">
+                        <i class="fa-brands fa-kaggle"></i>
+                        Dataset en Kaggle
+                    </a>
+                </div>
+            </header>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Mi Rol</div>
+                    <div class="meta-value">Data Scientist</div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Equipo</div>
+                    <div class="meta-value">Eloy García Martínez (yo)</div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Tecnologías</div>
+                    <div class="tech-list">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">scikit-learn</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">Seaborn</span>
+                        <span class="tech-item">Matplotlib</span>
+                        <span class="tech-item">Jupyter</span>
+                    </div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Timeline</div>
+                    <div class="meta-value">2026</div>
+                </div>
+            </div>
+
+            <article class="project-section general">
+                <h2 class="section-title">Contexto</h2>
+                <p class="section-text">
+                    El dataset <strong>OpenIntro Possum</strong> recoge medidas morfológicas de 104 zarigüeyas capturadas
+                    en Australia y Nueva Zelanda: longitud del cráneo, longitud total, longitud de la cola, tamaño
+                    del pie, del oído, del ojo, circunferencia del pecho y del vientre, junto con variables
+                    categóricas como el sexo y la población de origen.
+                </p>
+                <p class="section-text">
+                    El objetivo central es predecir la <strong>edad</strong> de cada individuo a partir del resto de
+                    variables, un problema de regresión con ruido inherente dado que las medidas longitudinales tienden
+                    a estabilizarse en la madurez.
+                </p>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Preguntas planteadas</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-icon"><i class="fa-solid fa-circle-question"></i></span>
+                        <div>
+                            <strong>¿Qué dimensiones corporales están más correlacionadas con la edad?</strong>
+                            <p class="section-text" style="margin-top:6px">
+                                La edad presenta una correlación de entre 0,3 y 0,4 con el pecho (<em>chest</em>)
+                                y el vientre (<em>belly</em>). Las medidas longitudinales, como la longitud total
+                                o la del cráneo, se estabilizan al llegar a la adultez y por tanto su relación
+                                con la edad es menor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon"><i class="fa-solid fa-circle-question"></i></span>
+                        <div>
+                            <strong>¿Se puede predecir el lugar de captura a partir de las medidas corporales?</strong>
+                            <p class="section-text" style="margin-top:6px">
+                                Sí. El dataset incluye las variables <em>site</em> y <em>Pop</em>, y las
+                                zarigüeyas presentan variaciones morfológicas según su hábitat, lo que hace
+                                factible una clasificación geográfica basada solo en medidas del cuerpo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon"><i class="fa-solid fa-circle-question"></i></span>
+                        <div>
+                            <strong>¿Con qué precisión podemos predecir la edad?</strong>
+                            <p class="section-text" style="margin-top:6px">
+                                Usando Random Forest con búsqueda de hiperparámetros se obtiene un R² que
+                                refleja la variabilidad explicada por las medidas morfológicas, con las
+                                limitaciones propias de un dataset pequeño (104 muestras).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Metodología</h2>
+                <ul class="features-list">
+                    <li><strong>Carga del dataset</strong> — descarga directa desde Kaggle mediante <code>kagglehub</code> con el adaptador de Pandas.</li>
+                    <li><strong>Análisis exploratorio</strong> — matriz de correlación con Seaborn heatmap para identificar las variables más relevantes.</li>
+                    <li><strong>Preprocesado</strong> — se eliminan <em>case</em> y <em>site</em> por ser redundantes o potencialmente leaky. Pipeline con <code>ColumnTransformer</code>: <code>OneHotEncoder</code> para categóricas, <code>SimpleImputer</code> (mediana) + <code>StandardScaler</code> para numéricas.</li>
+                    <li><strong>Modelo</strong> — <code>RandomForestRegressor</code> encapsulado en un <code>Pipeline</code> de scikit-learn junto al preprocesador.</li>
+                    <li><strong>Tuning de hiperparámetros</strong> — <code>GridSearchCV</code> con 5-fold CV sobre una rejilla de <em>n_estimators</em>, <em>max_depth</em>, <em>min_samples_split</em>, <em>min_samples_leaf</em> y <em>max_features</em>.</li>
+                    <li><strong>Evaluación</strong> — métrica R² sobre el conjunto de test; el mejor estimador se usa directamente a través de <code>grid_search.predict()</code>.</li>
+                </ul>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Hiperparámetros explorados</h2>
+                <div class="screenshots-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+
+                    <div class="meta-item">
+                        <div class="meta-label">n_estimators</div>
+                        <div class="meta-value">50 · 100 · 200 · 300</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">max_depth</div>
+                        <div class="meta-value">2 · 3 · 4 · 5</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">min_samples_split</div>
+                        <div class="meta-value">5 · 10 · 15</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">min_samples_leaf</div>
+                        <div class="meta-value">2 · 4 · 6</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">max_features</div>
+                        <div class="meta-value">sqrt · log2 · 1.0</div>
+                    </div>
+                </div>
+                <p class="section-text" style="margin-top:14px">
+                    Se controla la profundidad y el tamaño mínimo de hoja para evitar que el árbol sobreajuste
+                    en un dataset pequeño. El parámetro <em>max_features</em> regula cuántas variables se evalúan
+                    en cada split, introduciendo diversidad entre los árboles del bosque.
+                </p>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Conclusiones</h2>
+                <ul class="features-list">
+                    <li>
+                        Las variables <strong>chest</strong> y <strong>belly</strong> son las que más información
+                        aportan sobre la edad; las medidas longitudinales como <em>totlngth</em> o <em>hdlngth</em>
+                        tienen menor peso porque se estabilizan en la madurez.
+                    </li>
+                    <li>
+                        El lugar de captura sí es predecible a partir de las medidas morfológicas: las zarigüeyas
+                        muestran diferencias fenotípicas según su población, lo que permitiría construir un
+                        clasificador adicional.
+                    </li>
+                    <li>
+                        La predicción de edad con Random Forest obtiene un R² positivo, aunque modesto, coherente
+                        con la naturaleza ruidosa del problema: la edad de un animal no sigue un patrón
+                        perfectamente lineal con sus medidas una vez que alcanza la madurez.
+                    </li>
+                    <li>
+                        La regularización mediante <em>max_depth</em> y <em>min_samples_leaf</em> es crítica en
+                        datasets pequeños para evitar que cada árbol memorice el conjunto de entrenamiento.
+                    </li>
+                    <li>
+                        El uso de <code>Pipeline</code> + <code>GridSearchCV</code> asegura que el preprocesado
+                        se aplica solo sobre los datos de entrenamiento en cada fold, evitando fugas de datos.
+                    </li>
+                </ul>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Licencia y créditos</h2>
+                <p class="section-text">
+                    Dataset: <a href="https://www.kaggle.com/datasets/abrambeyer/openintro-possum" target="_blank" rel="noopener noreferrer">OpenIntro Possum</a>, publicado bajo licencia CC0 en Kaggle.
+                </p>
+                <p class="section-text" style="margin-top:-10px">
+                    © 2026 Eloy García Martínez.
+                </p>
+            </article>
+
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            if (window.__injectedDarkSwitch) return;
+            window.__injectedDarkSwitch = true;
+
+            const css = `
+  .injected-apple-switch{position:fixed;right:18px;top:20px;width:52px;height:30px;border-radius:999px;background:#18181B;border:1px solid #fff;padding:3px;display:inline-flex;align-items:center;cursor:pointer;z-index:9999;transition:background .22s ease}
+  .injected-apple-switch .knob{width:24px;height:24px;background:#fff;border-radius:50%;transform:translateX(0);transition:transform .22s cubic-bezier(.2,.9,.3,1);box-shadow:0 4px 10px rgba(0,0,0,.18)}
+  .injected-apple-switch.active{background: #fff; border:1px solid #000}
+  .injected-apple-switch.active .knob{background:#000;transform:translateX(22px)}
+  .injected-apple-switch:focus{outline:3px solid rgba(100,150,255,.18);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){.injected-apple-switch,.injected-apple-switch .knob{transition:none}}
+  `;
+
+            const style = document.createElement('style');
+            style.setAttribute('data-injected', 'dark-switch-styles');
+            style.appendChild(document.createTextNode(css));
+            document.head.appendChild(style);
+
+            function createButton() {
+                const btn = document.createElement('button');
+                btn.id = 'injected-apple-switch';
+                btn.className = 'injected-apple-switch';
+                btn.type = 'button';
+                btn.setAttribute('aria-label', 'Alternar modo oscuro');
+                btn.setAttribute('aria-pressed', 'false');
+                btn.title = 'Alternar modo oscuro';
+                btn.innerHTML = '<span class="knob" aria-hidden="true"></span>';
+
+                function setState(on, save) {
+                    document.body.classList.toggle('dark', !!on);
+                    btn.classList.toggle('active', !on);
+                    btn.setAttribute('aria-pressed', !!on ? 'true' : 'false');
+                    if (save) localStorage.setItem('prefers-dark', !!on ? '1' : '0');
+                }
+
+                function toggle() {
+                    setState(!document.body.classList.contains('dark'), true);
+                }
+
+                btn.addEventListener('click', toggle);
+                btn.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+                });
+
+                document.body.appendChild(btn);
+
+                const stored = localStorage.getItem('prefers-dark');
+                const initial = stored === '1' ? true : false;
+                setState(initial, false);
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', createButton); else createButton();
+        })();
+    </script>
+
+</body>
+</html>

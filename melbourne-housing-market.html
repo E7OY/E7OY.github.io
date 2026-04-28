@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prediccion del precio de vivienda en Melbourne con Random Forest y GridSearchCV.">
+    <title>Melbourne Housing Market - Proyecto IA | Eloy Garcia</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" type="image/png" href="img/eloy.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        (function () {
+            if (window.__applyDarkPref) return;
+            window.__applyDarkPref = true;
+            function applyPref() {
+                try {
+                    var stored = localStorage.getItem('prefers-dark');
+                    var shouldDark = stored === '1' ? true : (stored === '0' ? false : false);
+                    document.body.classList.toggle('dark', !!shouldDark);
+                } catch (e) {}
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyPref); else applyPref();
+        })();
+    </script>
+</head>
+
+<body class="body-grid">
+    <main>
+        <div class="project-container">
+            <nav class="back-nav">
+                <a href="index.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver al portfolio
+                </a>
+            </nav>
+
+            <header class="project-hero">
+                <div>
+                    <h1 class="project-title">Melbourne Housing Market</h1>
+                    <p class="project-subtitle">Prediccion del precio de vivienda con preprocesado mixto, Target Encoding y Random Forest.</p>
+                </div>
+
+                <div class="project-actions">
+                    <a href="img/melbourne-housing-market.ipynb" download class="btn-project btn-primary">
+                        <i class="fa-solid fa-download"></i>
+                        Descargar notebook
+                    </a>
+                    <a href="https://www.kaggle.com/datasets/anthonypino/melbourne-housing-market" target="_blank" rel="noopener noreferrer" class="btn-project btn-tertiary">
+                        <i class="fa-brands fa-kaggle"></i>
+                        Dataset en Kaggle
+                    </a>
+                </div>
+            </header>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Mi Rol</div>
+                    <div class="meta-value">Data Scientist</div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Equipo</div>
+                    <div class="meta-value">Eloy Garcia Martinez (yo)</div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Tecnologias</div>
+                    <div class="tech-list">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">scikit-learn</span>
+                        <span class="tech-item">TargetEncoder</span>
+                        <span class="tech-item">Random Forest</span>
+                        <span class="tech-item">Jupyter</span>
+                    </div>
+                </div>
+
+                <div class="meta-item">
+                    <div class="meta-label">Timeline</div>
+                    <div class="meta-value">2026</div>
+                </div>
+            </div>
+
+            <article class="project-section general">
+                <h2 class="section-title">Contexto</h2>
+                <p class="section-text">
+                    Este ejercicio usa el dataset de viviendas de Melbourne para estimar el precio de venta en funcion
+                    de variables estructurales y de localizacion. El problema se aborda como una regresion supervisada
+                    con un pipeline completo de preprocesado y ajuste del modelo.
+                </p>
+                <p class="section-text">
+                    El notebook combina analisis exploratorio, filtrado de outliers, transformacion de variables
+                    categoricas de alta cardinalidad y entrenamiento de un modelo de bosque aleatorio optimizado con
+                    GridSearchCV.
+                </p>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Que se hace en el notebook</h2>
+                <ul class="features-list">
+                    <li>Carga de datos desde Kaggle y revision inicial del dataset.</li>
+                    <li>Matriz de correlacion de variables numericas para detectar relaciones utiles.</li>
+                    <li>Filtrado del 1% inferior y superior del precio para reducir outliers extremos.</li>
+                    <li>Eliminacion de columnas con alta cardinalidad o ruido (por ejemplo Address y Date).</li>
+                    <li>Separacion train/test y limpieza de nulos en la variable objetivo.</li>
+                    <li>Preprocesado con ColumnTransformer: imputacion + TargetEncoder para categoricas y escalado para numericas.</li>
+                    <li>Entrenamiento de RandomForestRegressor dentro de Pipeline.</li>
+                    <li>Tuning de hiperparametros con GridSearchCV y evaluacion final con R2 y RMSE en validacion cruzada.</li>
+                </ul>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Decisiones tecnicas clave</h2>
+                <ul class="features-list">
+                    <li><strong>TargetEncoder</strong> en lugar de One-Hot para evitar explosion de columnas en variables categoricas con muchas categorias.</li>
+                    <li><strong>Recorte por cuantiles (1%-99%)</strong> para reducir el impacto de propiedades extremadamente caras o baratas.</li>
+                    <li><strong>Random Forest</strong> por su robustez frente a no linealidad e interacciones entre variables inmobiliarias.</li>
+                    <li><strong>GridSearchCV</strong> para ajustar profundidad, numero de arboles y criterios minimos de division/hoja.</li>
+                </ul>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Resultados y conclusiones</h2>
+                <ul class="features-list">
+                    <li>El modelo logra una capacidad predictiva util para estimar precio sobre datos no vistos.</li>
+                    <li>La validacion cruzada con RMSE aporta una lectura mas interpretable del error medio en unidades monetarias.</li>
+                    <li>El filtrado de outliers y el encodeo por target mejoran la estabilidad del entrenamiento.</li>
+                    <li>Como siguiente mejora, se puede comparar con XGBoost o LightGBM y validar por periodos temporales para simular escenario real.</li>
+                </ul>
+            </article>
+
+            <article class="project-section general">
+                <h2 class="section-title">Licencia y creditos</h2>
+                <p class="section-text">
+                    Dataset: Melbourne Housing Market en Kaggle. Proyecto realizado con fines formativos.
+                </p>
+                <p class="section-text" style="margin-top:-10px">
+                    © 2026 Eloy Garcia Martinez.
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            if (window.__injectedDarkSwitch) return;
+            window.__injectedDarkSwitch = true;
+
+            const css = `
+  .injected-apple-switch{position:fixed;right:18px;top:20px;width:52px;height:30px;border-radius:999px;background:#18181B;border:1px solid #fff;padding:3px;display:inline-flex;align-items:center;cursor:pointer;z-index:9999;transition:background .22s ease}
+  .injected-apple-switch .knob{width:24px;height:24px;background:#fff;border-radius:50%;transform:translateX(0);transition:transform .22s cubic-bezier(.2,.9,.3,1);box-shadow:0 4px 10px rgba(0,0,0,.18)}
+  .injected-apple-switch.active{background: #fff; border:1px solid #000}
+  .injected-apple-switch.active .knob{background:#000;transform:translateX(22px)}
+  .injected-apple-switch:focus{outline:3px solid rgba(100,150,255,.18);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){.injected-apple-switch,.injected-apple-switch .knob{transition:none}}
+  `;
+
+            const style = document.createElement('style');
+            style.setAttribute('data-injected', 'dark-switch-styles');
+            style.appendChild(document.createTextNode(css));
+            document.head.appendChild(style);
+
+            function createButton() {
+                const btn = document.createElement('button');
+                btn.id = 'injected-apple-switch';
+                btn.className = 'injected-apple-switch';
+                btn.type = 'button';
+                btn.setAttribute('aria-label', 'Alternar modo oscuro');
+                btn.setAttribute('aria-pressed', 'false');
+                btn.title = 'Alternar modo oscuro';
+                btn.innerHTML = '<span class="knob" aria-hidden="true"></span>';
+
+                function setState(on, save) {
+                    document.body.classList.toggle('dark', !!on);
+                    btn.classList.toggle('active', !on);
+                    btn.setAttribute('aria-pressed', !!on ? 'true' : 'false');
+                    if (save) localStorage.setItem('prefers-dark', !!on ? '1' : '0');
+                }
+
+                function toggle() {
+                    setState(!document.body.classList.contains('dark'), true);
+                }
+
+                btn.addEventListener('click', toggle);
+                btn.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+                });
+
+                document.body.appendChild(btn);
+
+                const stored = localStorage.getItem('prefers-dark');
+                const initial = stored === '1' ? true : false;
+                setState(initial, false);
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', createButton); else createButton();
+        })();
+    </script>
+
+</body>
+
+</html>

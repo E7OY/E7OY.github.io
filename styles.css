@@ -128,7 +128,7 @@ main {
 .nombre h3 {
     font-size: 16px;
     color: var(--secundario);
-    font-weight: 600;
+    font-weight: 800;
     margin: 0px;
     padding: 0px;
     width: 60%;
@@ -445,6 +445,59 @@ body.dark .general a {
     clear: none;
 }
 
+.ia-dropdown {
+    margin: 10px 0 12px;
+}
+
+.ia-dropdown summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 6px 10px;
+    box-shadow: 2px 2px 0 #000;
+    background: #fff;
+}
+
+.ia-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.ia-dropdown summary::after {
+    content: " +";
+    font-weight: 700;
+}
+
+.ia-dropdown[open] summary::after {
+    content: " -";
+}
+
+.ia-dropdown-list {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ia-dropdown-list li {
+    color: #000;
+    font-size: 13px;
+}
+
+.ia-dropdown-list a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px dashed #000;
+}
+
+.ia-dropdown-list a:hover {
+    opacity: 0.75;
+}
+
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -467,6 +520,10 @@ body.dark .proyecto-card {
     box-shadow: 4px 4px 0px var(--gris_bordes);
 }
 
+body.dark .proyecto-card::before {
+    border-color: #F2C811 transparent transparent transparent;
+}
+
 body.dark .proyecto-card:hover {
     border-color: #888888;
         box-shadow: 0px 0px 0px var(--gris_bordes);
@@ -479,6 +536,22 @@ body.dark .project-header h3 {
 
 body.dark .project-description {
     color: var(--gris_bordes);
+}
+
+body.dark .ia-dropdown summary {
+    color: var(--gris_bordes);
+    border-color: var(--gris_bordes);
+    box-shadow: 2px 2px 0 var(--gris_bordes);
+    background: #18181B;
+}
+
+body.dark .ia-dropdown-list li {
+    color: var(--gris_bordes);
+}
+
+body.dark .ia-dropdown-list a {
+    color: var(--gris_bordes);
+    border-bottom-color: var(--gris_bordes);
 }
 
 body.dark .tech-tag {
@@ -1338,6 +1411,17 @@ body.dark .design-cheatsheet p {
     box-shadow: 0px 0px 0px #00AA47;
 }
 
+.btn-powerbi {
+    border: 1px solid #000;
+    background: #F2C811;
+    color: #000;
+    box-shadow: 5px 5px 0px #F2C811;
+}
+
+.btn-powerbi:hover {
+    box-shadow: 0px 0px 0px #F2C811;
+}
+
 .btn-tertiary {
     border: 1px solid #fff;
     background: #7D00FE;
@@ -1500,6 +1584,7 @@ body.dark .zoom-prompt img {
 .screenshot-wrapper {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .screenshot-item {
@@ -1519,6 +1604,12 @@ body.dark .zoom-prompt img {
     transform: translateY(-4px);
     box-shadow: 14px 14px 0px rgb(0, 0, 0);
     cursor: zoom-in;
+}
+
+.report-embed-card:hover {
+    transform: none;
+    box-shadow: 10px 10px 0px rgb(0, 0, 0);
+    cursor: default;
 }
 
 .screenshot-placeholder {
